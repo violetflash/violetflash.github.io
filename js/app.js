@@ -1843,6 +1843,11 @@ $(function () {
       e.preventDefault();
     }
   }).on("select2:open", function () {
+    setTimeout(() => {
+      if ($('.select2-search__field').is(':focus')) {
+        $('.select2-search__field').blur();
+      }
+    }, 1);
     $('.select2-results__options').niceScroll({
       cursorcolor: "#ff8200",
       cursorwidth: "5px",
@@ -1857,8 +1862,6 @@ $(function () {
     width: "150px",
     minimumResultsForSearch: Infinity,
     dropdownCssClass: "city-dropdown"
-  }).on('select2:open', function () {
-    $('.select2-search input').prop('focus', 0);
   }); //Header NAV menu switch active
   // let navLinks = document.querySelectorAll('.bottom-header__link');
   //
