@@ -1857,6 +1857,8 @@ $(function () {
     width: "150px",
     minimumResultsForSearch: Infinity,
     dropdownCssClass: "city-dropdown"
+  }).on('select2:open', function () {
+    $('.select2-search input').prop('focus', 0);
   }); //Header NAV menu switch active
   // let navLinks = document.querySelectorAll('.bottom-header__link');
   //
