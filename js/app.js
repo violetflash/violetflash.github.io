@@ -1842,12 +1842,7 @@ $(function () {
       $(this).removeData('unselecting');
       e.preventDefault();
     }
-  }).on("select2:open", function () {
-    setTimeout(() => {
-      if ($('.select2-search__field').is(':focus')) {
-        $('.select2-search__field').blur();
-      }
-    }, 1);
+  }).on("select2:open", function (e) {
     $('.select2-results__options').niceScroll({
       cursorcolor: "#ff8200",
       cursorwidth: "5px",
@@ -1856,6 +1851,11 @@ $(function () {
       cursorborder: "none",
       horizrailenabled: false
     });
+  }).on('select2:open', function (e) {
+    $('.select2-search input').attr('readonly', true);
+  });
+  $('body').on('click', '.select2-search input', function () {
+    $(this).attr('readonly', false);
   }); // City choice select
 
   $('.top-header__select').select2({
