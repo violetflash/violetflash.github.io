@@ -1126,6 +1126,7 @@ h4 {
   width: 9px;
   height: 18px;
   cursor: pointer;
+  outline: transparent;
 }
 
 .slider-control__arrow svg path {
@@ -1141,6 +1142,7 @@ h4 {
 }
 
 .slider-control__count {
+  display: inline-block;
   margin: 0 26px;
   font-weight: 500;
   font-size: 16px;
@@ -2474,7 +2476,7 @@ button.mfp-close {
 
 .duplicate__item {
   position: relative;
-  margin: 0 0 16px;
+  margin: 0 0 25px;
   padding: 0 0 0 36px;
   line-height: 1.3;
 }
@@ -2511,7 +2513,24 @@ button.mfp-close {
 }
 
 .duplicate__image {
-  max-height: 500px;
+  height: 500px;
+}
+
+.duplicate__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.swiper-pagination-fraction {
+  width: auto;
+}
+
+.slider-control {
+  margin: 40px 0 0;
 }
 
 @media (min-width: 991.98px) {
@@ -2558,6 +2577,14 @@ button.mfp-close {
   .hero__info {
     margin: 10px 0 0 34px;
   }
+
+  .duplicate__list {
+    margin: 0 0 30px;
+  }
+
+  .duplicate__item {
+    margin: 0 0 15px;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -2596,6 +2623,24 @@ button.mfp-close {
   }
 }
 
+@media (max-width: 1000px) {
+  .duplicate {
+    padding: 54px 0 42px;
+  }
+
+  .duplicate__inner {
+    display: block;
+  }
+
+  .duplicate__info {
+    margin: 0 0 50px;
+  }
+
+  .duplicate__title {
+    font-size: 30px;
+  }
+}
+
 @media (max-width: 991.98px) {
   .top-header__info {
     display: none;
@@ -2619,6 +2664,12 @@ button.mfp-close {
 
   .bottom-header__dropdown {
     display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .duplicate__text {
+    max-width: 660px;
   }
 }
 
@@ -2789,7 +2840,7 @@ button.mfp-close {
 
   .cart__counter {
     position: absolute;
-    top: -1px;
+    top: -5px;
     left: -1px;
     font-size: 10px;
     padding: 1px 5px 0;
@@ -2815,9 +2866,21 @@ button.mfp-close {
   }
 }
 
+@media (max-width: 550px) {
+  .duplicate__slider {
+    margin: 0 -20px;
+  }
+
+  .slider-control {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 500px) {
   .hero__video {
-    height: 385px;
+    height: calc(100% - 431px);
   }
 
   .hero__tabs .tabs__tab-box {
@@ -2856,23 +2919,7 @@ button.mfp-close {
   }
 }
 
-@media (max-width: 365px) {
-  .hero__video {
-    height: 415px;
-  }
-}
-
-@media (max-width: 331px) {
-  .hero__video {
-    height: 430px;
-  }
-}
-
 @media (max-width: 320px) {
-  .hero__video {
-    height: 460px;
-  }
-
   .hero__info {
     margin: 0 0 31px;
   }
