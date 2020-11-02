@@ -2579,6 +2579,11 @@ button.mfp-close {
   text-transform: capitalize;
 }
 
+.brands__slider .swiper-slide-active .brands__image {
+  border: 1px solid var(--accent);
+  opacity: 1;
+}
+
 .brands__arrow-prev path,
 .brands__arrow-next path {
   stroke: var(--white);

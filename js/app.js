@@ -64,12 +64,12 @@ if (document.querySelector('.duplicate__slider')) {
 
 if (document.querySelector('.brands__slider')) {
   var brands_slider = new Swiper('.brands__slider', {
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
     slidesPerView: 7,
-    // centeredSlides: true,
+    centeredSlides: true,
     observer: true,
     observeParents: true,
     spaceBetween: 15,
@@ -90,14 +90,14 @@ if (document.querySelector('.brands__slider')) {
       // when window width is >= 320px
       320: {
         slidesPerView: 2,
-        spaceBetween: 15,
-        centeredSlides: true
+        spaceBetween: 15 // centeredSlides: true,
+
       },
       // when window width is >= 480px
       480: {
         slidesPerView: 3,
-        spaceBetween: 15,
-        centeredSlides: true
+        spaceBetween: 15 // centeredSlides: true,
+
       },
       // when window width is >= 768px
       768: {
