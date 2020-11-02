@@ -64,10 +64,10 @@ if (document.querySelector('.duplicate__slider')) {
 
 if (document.querySelector('.brands__slider')) {
   var brands_slider = new Swiper('.brands__slider', {
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true
+    },
     slidesPerView: 7,
     centeredSlides: true,
     observer: true,
@@ -75,12 +75,6 @@ if (document.querySelector('.brands__slider')) {
     spaceBetween: 15,
     speed: 800,
     loop: true,
-    //Dots
-    // pagination: {
-    //   el: '.brands__count',
-    //   // clickable: true,
-    //   type: 'fraction',
-    // },
     // Arrows
     navigation: {
       nextEl: '.brands__arrow-next',
@@ -1889,6 +1883,9 @@ for (let i = 0; i < favorites.length; i++) {
   });
 }
 
+let selector = document.querySelectorAll('input[type="tel"]');
+let im = new Inputmask("+7 (999) 999-99-99");
+im.mask(selector);
 $(function () {
   $('.filter__select').select2({
     width: "100%",
@@ -2004,7 +2001,18 @@ $(function () {
       let password = passwords[i];
       password.type == 'password' ? password.type = 'text' : password.type = 'password';
     });
-  }
+  } // Call modal
+
+
+  $('.hero__btn').magnificPopup({
+    type: 'inline',
+    preloader: false
+  }); // Call-request modal
+
+  $('.call__btn').magnificPopup({
+    type: 'inline',
+    preloader: false
+  });
 }); // Dynamic Adapt v.1
 // HTML data-da="where(uniq class name),position(digi),when(breakpoint)"
 // e.x. data-da="item,2,992"

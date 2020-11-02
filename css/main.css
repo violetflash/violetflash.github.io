@@ -1020,6 +1020,14 @@ h4 {
   font-size: 16px;
 }
 
+input {
+  width: 100%;
+  outline: transparent;
+  padding: 14px 16px;
+  border: 1px solid #E0E0E0;
+  color: var(--mainColor-hover);
+}
+
 .btn {
   display: inline-block;
   border: 1px solid var(--accent);
@@ -1521,12 +1529,6 @@ h4 {
 
 .filter__input {
   position: relative;
-  width: 100%;
-  font-weight: 500;
-  outline: transparent;
-  padding: 14px 16px;
-  border: 1px solid #E0E0E0;
-  color: var(--mainColor-hover);
 }
 
 .filter__input-clear {
@@ -2237,6 +2239,165 @@ button.mfp-close {
   border-bottom: 1px dashed;
 }
 
+.call {
+  width: 300px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.call__top {
+  text-align: center;
+  padding: 26px 15px;
+}
+
+.call__phone {
+  margin: 0 0 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--mainColor-hover);
+}
+
+.call__text {
+  display: block;
+  width: 100%;
+  color: var(--mainColor);
+  font-size: 12px;
+}
+
+.call__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #e0e0e0;
+}
+
+.call__btn {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 50%;
+  flex: 0 1 50%;
+  display: block;
+  text-align: center;
+  padding: 15px;
+  border-right: 1px solid #e0e0e0;
+  font-weight: 600;
+  color: var(--mainColor-hover);
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.call__btn::first-letter {
+  text-transform: capitalize;
+}
+
+.call__btn:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.call__btn:last-child {
+  border: none;
+}
+
+.call-request {
+  position: relative;
+  margin: 0 auto;
+  padding: 40px 15px 30px;
+  width: 360px;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.call-request__title {
+  margin: 0 0 20px;
+  padding: -15px;
+  font-weight: 700;
+  color: var(--mainColor-hover);
+}
+
+.call-request__title::first-letter {
+  text-transform: capitalize;
+}
+
+.call-request__subtitle {
+  margin: 0 0 35px;
+}
+
+.call-request__input {
+  margin: 0 0 10px;
+  color: var(--mainColor-hover);
+  font-weight: 700;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.call-request__input--tel {
+  font-weight: 500;
+}
+
+.call-request__input:last-child {
+  margin: 0;
+}
+
+.call-request__input::-webkit-input-placeholder {
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+.call-request__input::-moz-placeholder {
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+.call-request__input:-ms-input-placeholder {
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+.call-request__input::-ms-input-placeholder {
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+.call-request__input::placeholder {
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+.call-request__input:focus {
+  border-bottom: 1px solid var(--accent);
+}
+
+.call-request__btn {
+  margin: 130px 0 25px;
+  width: 100%;
+}
+
+.call-request__btn::first-letter {
+  text-transform: capitalize;
+}
+
+.call-request__text {
+  margin: 0 0 10px;
+  font-size: 12px;
+}
+
+.call-request__phone {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.call-request .mfp-close {
+  top: 20px;
+  right: 21px;
+  opacity: 0.2;
+}
+
+.call-request .mfp-close:hover {
+  opacity: 1;
+}
+
 .hero {
   position: relative;
   padding: 20px 0 0;
@@ -2712,6 +2873,13 @@ button.mfp-close {
 
   .duplicate__title {
     font-size: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .call__btn.active {
+    background-color: var(--accent);
+    color: var(--white);
   }
 }
 
