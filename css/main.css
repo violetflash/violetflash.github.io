@@ -2774,6 +2774,127 @@ button.mfp-close {
   opacity: 1;
 }
 
+.about {
+  padding: 107px 0 80px;
+}
+
+.about__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 0 90px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.about__item {
+  position: relative;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 33.333%;
+  flex: 0 1 33.333%;
+  margin: 0 0 35px;
+}
+
+.about__item::after {
+  content: "";
+  position: absolute;
+  right: 30%;
+  top: 36px;
+  width: 37px;
+  height: 26px;
+  background: url("../images/icons/about/arrow-right.svg") center no-repeat;
+}
+
+.about__item:nth-child(3)::after,
+.about__item:last-child::after {
+  display: none;
+}
+
+.about__title {
+  margin: 0 0 50px;
+  color: #313131;
+}
+
+.about__title::first-letter {
+  text-transform: capitalize;
+}
+
+.about__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 0 20px;
+  width: 107px;
+  height: 107px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+}
+
+.about__caption {
+  position: relative;
+  margin: 0 0 15px;
+  max-width: 200px;
+  color: #333;
+  font-weight: 600;
+}
+
+.about__caption::first-letter {
+  text-transform: capitalize;
+}
+
+.about__counter {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  left: -40px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.about__text {
+  line-height: 23px;
+  max-width: 200px;
+}
+
+.about__btn {
+  margin: 0 34px 0 0;
+  padding: 18px 41px;
+  text-align: center;
+  min-width: 336px;
+  font-size: 16px;
+}
+
+.about__btn:last-child {
+  margin: 0;
+}
+
+@media (max-width: 1300px) {
+  .about__items {
+    margin: 0 0 0 40px;
+  }
+}
+
 @media (max-width: 1200px) {
   .top-header__phone {
     margin: 0;
@@ -2909,6 +3030,27 @@ button.mfp-close {
   }
 }
 
+@media (max-width: 900px) {
+  .about__items {
+    margin: 0 0 0 70px;
+  }
+
+  .about__item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+  }
+
+  .about__item:nth-child(3)::after {
+    display: block;
+  }
+
+  .about__item:nth-child(2)::after,
+  .about__item:nth-child(4)::after {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .duplicate__text {
     max-width: 660px;
@@ -2989,11 +3131,33 @@ button.mfp-close {
   .brands .slider-control {
     margin: 0 0 0 30px;
   }
+
+  .about__title {
+    margin: 0 0 40px;
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 750px) {
   .top-header__login {
     font-size: 0;
+  }
+
+  .about__btn {
+    display: block;
+    width: 60%;
+    min-width: unset;
+    margin: 0 auto 20px;
+  }
+
+  .about__btn:last-child {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .about__items {
+    margin: 0 0 0 40px;
   }
 }
 
@@ -3129,6 +3293,67 @@ button.mfp-close {
   }
 }
 
+@media (max-width: 570px) {
+  .about {
+    padding: 25px 0 44px;
+  }
+
+  .about__items {
+    margin: 0;
+  }
+
+  .about__item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 0 75px;
+  }
+
+  .about__item:nth-child(2)::after,
+  .about__item:nth-child(4)::after {
+    display: block;
+  }
+
+  .about__item::after {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: unset;
+    top: unset;
+    bottom: -40px;
+  }
+
+  .about__image {
+    margin: 0 auto 20px;
+  }
+
+  .about__caption {
+    max-width: 100%;
+  }
+
+  .about__counter {
+    display: none;
+  }
+
+  .about__text {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 550px) {
   .duplicate__slider {
     margin: 0 -20px;
@@ -3145,6 +3370,10 @@ button.mfp-close {
     -ms-flex-pack: center;
     justify-content: center;
     margin: 0;
+  }
+
+  .about__btn {
+    width: 100%;
   }
 }
 
