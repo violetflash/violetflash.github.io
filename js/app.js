@@ -1825,7 +1825,7 @@ for (let i = 0; i < tabs.length; i++) {
 
 let tabsFilter = document.querySelectorAll('.filter');
 
-for (let i = 0; i < tabs.length; i++) {
+for (let i = 0; i < tabsFilter.length; i++) {
   let tabFilter = tabsFilter[i];
   let tabs_items = tabFilter.querySelectorAll('.filter__tab');
   let tabs_content = tabFilter.querySelectorAll('.filter__tab-content');
@@ -1902,6 +1902,21 @@ validateForms('.call-request', {
   tel: {
     required: true
   }
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const navLine = document.querySelector('.hero__menu-line'),
+        navItem = document.querySelectorAll('.hero__menu-item');
+  navLine.style.width = `${navItem[0].offsetWidth}px`;
+  navItem.forEach(el => {
+    el.addEventListener('mouseenter', e => {
+      navLine.style.width = `${e.currentTarget.offsetWidth}px`;
+      navLine.style.left = `${e.currentTarget.offsetLeft}px`;
+    });
+    el.addEventListener('mouseleave', () => {
+      navLine.style.width = `${navItem[0].offsetWidth}px`;
+      navLine.style.left = `0px`;
+    });
+  });
 });
 $(function () {
   $('.filter__select').select2({
