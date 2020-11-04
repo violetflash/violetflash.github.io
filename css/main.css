@@ -1020,12 +1020,14 @@ h4 {
   font-size: 16px;
 }
 
-input {
+input,
+textarea {
   width: 100%;
   outline: transparent;
   padding: 14px 16px;
   border: 1px solid #E0E0E0;
   color: var(--mainColor-hover);
+  resize: none;
 }
 
 .btn {
@@ -1038,6 +1040,7 @@ input {
   line-height: 1.2;
   color: var(--white);
   background-color: var(--accent);
+  text-align: center;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -1045,6 +1048,10 @@ input {
 
 .btn:hover {
   background-color: var(--accent-hover);
+}
+
+.btn::first-letter {
+  text-transform: capitalize;
 }
 
 .btn--clear {
@@ -1987,20 +1994,28 @@ button.mfp-close {
   background: url("../images/icons/filter-clear.svg") center no-repeat;
 }
 
-.logon {
+.modal {
   position: relative;
   margin: 0 auto;
+  background-color: #fff;
+}
+
+.modal--logon {
   border-top: 5px solid var(--accent);
   padding: 20px;
   border-radius: 10px 0 10px 0;
-  background-color: #fff;
-  max-width: 320px;
-  width: 100%;
   -webkit-box-shadow: 0 0 3px rgba(var(--black), 0.6);
   box-shadow: 0 0 3px rgba(var(--black), 0.6);
+  max-width: 320px;
 }
 
-.logon__switcher-title {
+.modal--logon .modal__btn {
+  margin: 30px 0 0;
+  padding: 14px 20px;
+  font-weight: 600;
+}
+
+.modal__switcher-title {
   position: absolute;
   left: 0;
   top: -5px;
@@ -2013,7 +2028,7 @@ button.mfp-close {
   text-transform: capitalize;
 }
 
-.logon__tooltip {
+.modal__tooltip {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2033,7 +2048,7 @@ button.mfp-close {
   cursor: pointer;
 }
 
-.logon__tooltip::before {
+.modal__tooltip::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2044,7 +2059,7 @@ button.mfp-close {
   z-index: -1;
 }
 
-.logon__tooltip::after {
+.modal__tooltip::after {
   content: "";
   position: absolute;
   right: -15px;
@@ -2055,73 +2070,92 @@ button.mfp-close {
   border-bottom: 8px solid transparent;
 }
 
-.logon__tooltip-text {
+.modal__tooltip-text {
   border-bottom: 1px dashed;
 }
 
-.logon__module {
+.modal__module {
   display: none;
   padding: 40px 0;
 }
 
-.logon__module:nth-child(2) {
+.modal__module:nth-child(2) {
   display: block;
 }
 
-.logon__title {
-  font-size: 24px;
+.modal__title {
   margin: 0 0 20px;
+  font-weight: 700;
   text-align: center;
+  color: var(--mainColor-hover);
+}
+
+.modal__title::first-letter {
   text-transform: capitalize;
 }
 
-.logon__input {
-  outline: transparent;
-  width: 100%;
-  border: 1px solid #e0e0e0;
-  margin: 0 0 20px;
-  padding: 10px 15px;
+.modal__subtitle {
+  margin: 0 0 35px;
+  line-height: 1.55;
+}
+
+.modal__input {
+  margin: 0 0 10px;
+  font-weight: 600;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
-.logon__input::-webkit-input-placeholder:first-letter {
-  text-transform: capitalize;
+.modal__input--tel {
+  font-weight: 500;
 }
 
-.logon__input::-moz-placeholder:first-letter {
-  text-transform: capitalize;
+.modal__input--textarea {
+  min-height: 90px;
 }
 
-.logon__input:-ms-input-placeholder:first-letter {
-  text-transform: capitalize;
-}
-
-.logon__input::-ms-input-placeholder:first-letter {
-  text-transform: capitalize;
-}
-
-.logon__input::placeholder:first-letter {
-  text-transform: capitalize;
-}
-
-.logon__input:last-child {
+.modal__input:last-child {
   margin: 0;
 }
 
-.logon__input:focus {
-  border: 1px solid #b5b1b1;
+.modal__input::-webkit-input-placeholder {
+  color: var(--mainColor);
+  font-weight: 500;
 }
 
-.logon__label {
+.modal__input::-moz-placeholder {
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+.modal__input:-ms-input-placeholder {
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+.modal__input::-ms-input-placeholder {
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+.modal__input::placeholder {
+  color: var(--mainColor);
+  font-weight: 500;
+}
+
+.modal__input:focus {
+  border-bottom: 1px solid var(--accent);
+}
+
+.modal__label {
   display: block;
   position: relative;
   height: 38px;
   margin: 0 0 20px;
 }
 
-.logon__show {
+.modal__show {
   position: absolute;
   right: 15px;
   top: 50%;
@@ -2135,17 +2169,17 @@ button.mfp-close {
   background-repeat: no-repeat;
 }
 
-.logon__show._active {
+.modal__show._active {
   background-image: url("../images/icons/eye-pass-active.svg");
 }
 
-.logon__checkbox-input {
+.modal__checkbox-input {
   display: none;
   opacity: 0;
   visibility: hidden;
 }
 
-.logon__checkbox-input:checked + .logon__checkbox-text::before {
+.modal__checkbox-input:checked + .modal__checkbox-text::before {
   width: 10px;
   top: -3px;
   left: 5px;
@@ -2159,19 +2193,22 @@ button.mfp-close {
   z-index: 5;
 }
 
-.logon__checkbox-text {
+.modal__checkbox-text {
   position: relative;
   display: block;
   padding-left: 25px;
+  font-size: 12px;
+  line-height: 1.6;
   cursor: pointer;
+  text-align: left;
 }
 
-.logon__checkbox-text::before {
+.modal__checkbox-text::before {
   content: "";
   position: absolute;
   display: block;
   left: 0;
-  top: 0;
+  top: 3px;
   width: 15px;
   height: 15px;
   border: 1px solid #e0e0e0;
@@ -2180,36 +2217,43 @@ button.mfp-close {
   transition: all 0.3s ease 0s;
 }
 
-.logon__checkbox-text::after {
-  content: "";
-  position: absolute;
-  display: block;
-  opacity: 0;
-  left: 0;
-  top: 0;
-  width: 15px;
-  height: 15px;
-  border: 1px solid #e0e0e0;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.logon__terms {
+.modal__terms {
   border-bottom: 1px solid #e0e0e0;
   color: var(--mainColor-hover);
   text-transform: capitalize;
 }
 
-.logon__btn {
-  margin: 30px 0 0;
-  width: 100%;
-  padding: 10px 15px;
-  font-size: 14px;
-  text-transform: uppercase;
+.modal__call-btn {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 50%;
+  flex: 0 1 50%;
+  display: block;
+  text-align: center;
+  padding: 15px;
+  border-right: 1px solid #e0e0e0;
+  font-weight: 600;
+  color: var(--mainColor-hover);
 }
 
-.logon__cta {
+.modal__call-btn::first-letter {
+  text-transform: capitalize;
+}
+
+.modal__call-btn:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.modal__call-btn:last-child {
+  border: none;
+}
+
+.modal__btn {
+  margin: 30px 0;
+  width: 100%;
+}
+
+.modal__cta {
   position: absolute;
   bottom: 0;
   display: block;
@@ -2224,177 +2268,81 @@ button.mfp-close {
   transition: all 0.3s ease 0s;
 }
 
-.logon__cta span {
+.modal__cta span {
   border-bottom: 1px dashed transparent;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
-.logon__cta:hover {
+.modal__cta:hover {
   color: var(--mainColor-hover);
 }
 
-.logon__cta:hover span {
+.modal__cta:hover span {
   border-bottom: 1px dashed;
 }
 
-.call {
+.modal--call {
   width: 300px;
-  background-color: #fff;
-  margin: 0 auto;
 }
 
-.call__top {
+.modal--call .modal__phone {
+  color: var(--mainColor-hover);
+  margin: 0 0 10px;
+}
+
+.modal--call .mfp-close {
+  top: 10px;
+  right: 10px;
+  opacity: 0.2;
+}
+
+.modal--call .mfp-close:hover {
+  opacity: 1;
+}
+
+.modal__top {
   text-align: center;
   padding: 26px 15px;
 }
 
-.call__phone {
-  margin: 0 0 10px;
+.modal__phone {
   font-weight: 600;
   font-size: 20px;
-  color: var(--mainColor-hover);
 }
 
-.call__text {
+.modal__text {
   display: block;
   width: 100%;
   color: var(--mainColor);
   font-size: 12px;
 }
 
-.call__buttons {
+.modal__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border: 1px solid #e0e0e0;
 }
 
-.call__btn {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 50%;
-  flex: 0 1 50%;
-  display: block;
-  text-align: center;
-  padding: 15px;
-  border-right: 1px solid #e0e0e0;
-  font-weight: 600;
-  color: var(--mainColor-hover);
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.call__btn::first-letter {
-  text-transform: capitalize;
-}
-
-.call__btn:hover {
-  background-color: var(--accent);
-  color: var(--white);
-}
-
-.call__btn:last-child {
-  border: none;
-}
-
-.call-request {
-  position: relative;
-  margin: 0 auto;
+.modal--request {
   padding: 40px 15px 30px;
   width: 360px;
-  background-color: var(--white);
   text-align: center;
 }
 
-.call-request__title {
-  margin: 0 0 20px;
-  padding: -15px;
-  font-weight: 700;
-  color: var(--mainColor-hover);
-}
-
-.call-request__title::first-letter {
-  text-transform: capitalize;
-}
-
-.call-request__subtitle {
-  margin: 0 0 35px;
-}
-
-.call-request__input {
+.modal--request .modal__text {
   margin: 0 0 10px;
-  color: var(--mainColor-hover);
-  font-weight: 700;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
 }
 
-.call-request__input--tel {
-  font-weight: 500;
-}
-
-.call-request__input:last-child {
-  margin: 0;
-}
-
-.call-request__input::-webkit-input-placeholder {
-  color: var(--mainColor);
-  font-weight: 500;
-}
-
-.call-request__input::-moz-placeholder {
-  color: var(--mainColor);
-  font-weight: 500;
-}
-
-.call-request__input:-ms-input-placeholder {
-  color: var(--mainColor);
-  font-weight: 500;
-}
-
-.call-request__input::-ms-input-placeholder {
-  color: var(--mainColor);
-  font-weight: 500;
-}
-
-.call-request__input::placeholder {
-  color: var(--mainColor);
-  font-weight: 500;
-}
-
-.call-request__input:focus {
-  border-bottom: 1px solid var(--accent);
-}
-
-.call-request__btn {
-  margin: 130px 0 25px;
-  width: 100%;
-}
-
-.call-request__btn::first-letter {
-  text-transform: capitalize;
-}
-
-.call-request__text {
-  margin: 0 0 10px;
-  font-size: 12px;
-}
-
-.call-request__phone {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.call-request .mfp-close {
+.modal--request .mfp-close {
   top: 20px;
   right: 21px;
   opacity: 0.2;
 }
 
-.call-request .mfp-close:hover {
+.modal--request .mfp-close:hover {
   opacity: 1;
 }
 
@@ -3008,7 +2956,7 @@ button.mfp-close {
 }
 
 @media (max-width: 992px) {
-  .call__btn.active {
+  .modal__call-btn.active {
     background-color: var(--accent);
     color: var(--white);
   }
@@ -3282,7 +3230,7 @@ button.mfp-close {
     min-width: 13px;
   }
 
-  .logon__tooltip {
+  .modal__tooltip {
     display: none;
   }
 

@@ -1896,13 +1896,13 @@ let validateForms = function (selector, rules) {
   new window.JustValidate(selector, {
     rules: rules
   });
-};
+}; // validateForms('.call-request', {
+//     tel: {
+//         required: true,
+//     }
+// })
 
-validateForms('.call-request', {
-  tel: {
-    required: true
-  }
-});
+
 document.addEventListener('DOMContentLoaded', () => {
   const navLine = document.querySelector('.hero__menu-line'),
         navItem = document.querySelectorAll('.hero__menu-item');
@@ -1985,7 +1985,7 @@ $(function () {
   $('.top-header__login').magnificPopup({
     type: 'inline',
     preloader: false,
-    focus: '.logon__login',
+    focus: '.modal__login',
     closeOnBgClick: false,
     // When elemened is focused, some mobile browsers in some cases zoom in
     // It looks not nice, so we disable it:
@@ -2000,22 +2000,22 @@ $(function () {
     }
   }); // Switching Login to Register
 
-  $('.logon__switcher').click(function () {
+  $('.modal__switcher').click(function () {
     // Switches the Icon
     $(this).toggleClass('_register');
 
     if ($(this).hasClass('_register')) {
       // $(this).text('Вход')
-      $('.logon__tooltip-text').text('уже есть аккаунт?');
-      $('.logon__switcher-title').text('Вход');
+      $('.modal__tooltip-text').text('уже есть аккаунт?');
+      $('.modal__switcher-title').text('Вход');
     } else {
       // $(this).text('Регистрация')
-      $('.logon__tooltip-text').text('нет аккаунта?');
-      $('.logon__switcher-title').text('Регистрация   ');
+      $('.modal__tooltip-text').text('нет аккаунта?');
+      $('.modal__switcher-title').text('Регистрация   ');
     } // Switches the forms
 
 
-    $('.logon__module').animate({
+    $('.modal__module').animate({
       height: "toggle",
       'padding-top': 'toggle',
       'padding-bottom': 'toggle',
@@ -2023,8 +2023,8 @@ $(function () {
     }, "slow");
   }); // password show
 
-  let passEyes = document.querySelectorAll('.logon__show');
-  let passwords = document.querySelectorAll('.logon__password');
+  let passEyes = document.querySelectorAll('.modal__show');
+  let passwords = document.querySelectorAll('.modal__password');
 
   for (let i = 0; i < passEyes.length; i++) {
     const passEye = passEyes[i];
@@ -2041,7 +2041,11 @@ $(function () {
     preloader: false
   }); // Call-request modal
 
-  $('.call__btn').magnificPopup({
+  $('.modal__call-btn').magnificPopup({
+    type: 'inline',
+    preloader: false
+  });
+  $('.about__btn').magnificPopup({
     type: 'inline',
     preloader: false
   });
