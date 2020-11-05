@@ -115,6 +115,58 @@ if (document.querySelector('.brands__slider')) {
   });
 }
 
+if (document.querySelector('.info__slider')) {
+  var info_slider = new Swiper('.info__slider', {
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: true,
+    // },
+    slidesPerView: 4,
+    // centeredSlides: true,
+    observer: true,
+    observeParents: true,
+    spaceBetween: 35,
+    speed: 800,
+    loop: true,
+    pagination: {
+      // el: '.info--blog .slider-control__count',
+      // clickable: true,
+      type: 'fraction'
+    },
+    // Arrows
+    navigation: {
+      nextEl: '.info--blog .slider-control__next',
+      prevEl: '.info--blog .slider-control__prev'
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 35 // centeredSlides: true,
+
+      },
+      // when window width is >= 480px
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 35 // centeredSlides: true,
+
+      },
+      // when window width is >= 768px
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 35
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 35
+      },
+      1205: {
+        slidesPerView: 4,
+        spaceBetween: 35
+      }
+    }
+  });
+}
+
 (function ($) {
   var Defaults = $.fn.select2.amd.require('select2/defaults');
 
@@ -1917,7 +1969,28 @@ document.addEventListener('DOMContentLoaded', () => {
       navLine.style.left = `0px`;
     });
   });
-});
+}); // about__item counter
+
+let items = document.querySelectorAll('.about__item');
+var index = 1;
+let counters = document.querySelectorAll('.about__counter');
+
+for (let i = 0; i < items.length; i++) {
+  let counter = counters[i];
+  counter.innerHTML = index;
+  index = index + 1;
+}
+
+let itemsArticles = document.querySelectorAll('.poster');
+number = 1;
+let countersArticles = document.querySelectorAll('.poster__counter');
+
+for (let i = 0; i < itemsArticles.length; i++) {
+  let counter = countersArticles[i];
+  counter.innerHTML = number;
+  number = number + 1;
+}
+
 $(function () {
   $('.filter__select').select2({
     width: "100%",
