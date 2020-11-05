@@ -1981,16 +1981,6 @@ for (let i = 0; i < items.length; i++) {
   index = index + 1;
 }
 
-let itemsArticles = document.querySelectorAll('.poster');
-number = 1;
-let countersArticles = document.querySelectorAll('.poster__counter');
-
-for (let i = 0; i < itemsArticles.length; i++) {
-  let counter = countersArticles[i];
-  counter.innerHTML = number;
-  number = number + 1;
-}
-
 $(function () {
   $('.filter__select').select2({
     width: "100%",
@@ -2064,11 +2054,16 @@ $(function () {
     // It looks not nice, so we disable it:
     callbacks: {
       beforeOpen: function () {
+        $('body').addClass('mfp-active');
+
         if ($(window).width() < 700) {
           this.st.focus = false;
         } else {
           this.st.focus = '#name';
         }
+      },
+      beforeClose: function () {
+        $('body').removeClass('mfp-active');
       }
     }
   }); // Switching Login to Register
@@ -2111,16 +2106,58 @@ $(function () {
 
   $('.hero__btn').magnificPopup({
     type: 'inline',
-    preloader: false
+    preloader: false,
+    callbacks: {
+      beforeOpen: function () {
+        $('body').addClass('mfp-active');
+
+        if ($(window).width() < 700) {
+          this.st.focus = false;
+        } else {
+          this.st.focus = '#name';
+        }
+      },
+      beforeClose: function () {
+        $('body').removeClass('mfp-active');
+      }
+    }
   }); // Call-request modal
 
   $('.modal__call-btn').magnificPopup({
     type: 'inline',
-    preloader: false
+    preloader: false,
+    callbacks: {
+      beforeOpen: function () {
+        $('body').addClass('mfp-active');
+
+        if ($(window).width() < 700) {
+          this.st.focus = false;
+        } else {
+          this.st.focus = '#name';
+        }
+      },
+      beforeClose: function () {
+        $('body').removeClass('mfp-active');
+      }
+    }
   });
   $('.about__btn').magnificPopup({
     type: 'inline',
-    preloader: false
+    preloader: false,
+    callbacks: {
+      beforeOpen: function () {
+        $('body').addClass('mfp-active');
+
+        if ($(window).width() < 700) {
+          this.st.focus = false;
+        } else {
+          this.st.focus = '#name';
+        }
+      },
+      beforeClose: function () {
+        $('body').removeClass('mfp-active');
+      }
+    }
   });
 }); // Dynamic Adapt v.1
 // HTML data-da="where(uniq class name),position(digi),when(breakpoint)"

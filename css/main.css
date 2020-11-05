@@ -1963,6 +1963,24 @@ textarea {
   margin: 0 0 0 5px;
 }
 
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+body.mfp-active {
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+  width: 100%;
+  position: fixed;
+  overflow: auto;
+}
+
+body .mfp-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 0 !important;
+}
+
 .mfp-bg {
   background: var(--lightGrey);
 }
@@ -2328,7 +2346,7 @@ button.mfp-close {
 
 .modal--request {
   padding: 40px 15px 30px;
-  width: 360px;
+  max-width: 360px;
   text-align: center;
 }
 
