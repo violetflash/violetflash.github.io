@@ -3421,6 +3421,14 @@ button.mfp-close {
   align-items: center;
 }
 
+.footer__payment img {
+  margin: 0 10px 0 0;
+}
+
+.footer__payment img:last-child {
+  margin: 0;
+}
+
 .footer .btn--clear {
   color: var(--white);
 }
@@ -4180,7 +4188,6 @@ button.mfp-close {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    text-align: center;
   }
 
   .footer__column {
@@ -4190,6 +4197,10 @@ button.mfp-close {
     max-width: 100%;
     width: 100%;
     padding: 0;
+  }
+
+  .footer__logo {
+    text-align: center;
   }
 
   .footer__contacts {
@@ -4217,6 +4228,7 @@ button.mfp-close {
 
   .footer__phone {
     margin: 40px 0 11px;
+    text-align: center;
   }
 
   .footer__btn {
