@@ -2088,9 +2088,19 @@ $(function () {
       $('.bottom-header__dropdown-list').slideUp(300);
       $('.bottom-header__dropdown-btn').removeClass('_active');
     }
+  });
+  $(".scroll-header").hide();
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 10) {
+      $('.scroll-header').slideDown(500);
+      $('.header').slideUp(500);
+    } else {
+      $('.scroll-header').slideUp(500);
+      $('.header').slideDown(500);
+    }
   }); ///MODAL LOGIN-REGISTER
 
-  $('.top-header__login').magnificPopup({
+  $('.modal-login').magnificPopup({
     type: 'inline',
     preloader: false,
     focus: '.modal__login',

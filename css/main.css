@@ -1623,6 +1623,62 @@ textarea {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.scroll-header {
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 14px 0;
+  z-index: 999;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.scroll-header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.scroll-header__login-icon {
+  width: 19px;
+  height: 19px;
+}
+
+.scroll-header .logo {
+  width: 99px;
+}
+
+.scroll-header .logo img {
+  padding: 0;
+  height: 18px;
+}
+
+.scroll-header__phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 37px;
+  flex: 0 0 37px;
+  height: 37px;
+  background-color: var(--accent);
+  border-radius: 50%;
+}
+
 .top-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4326,6 +4382,14 @@ button.mfp-close {
 @media (max-width: 400px) {
   .bottom-header__dropdown-list {
     width: 290px;
+  }
+}
+
+@media (max-width: 360px) {
+  .scroll-header {
+    position: fixed;
+    visibility: visible;
+    opacity: 1;
   }
 }
 
