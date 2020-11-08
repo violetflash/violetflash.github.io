@@ -2158,9 +2158,12 @@ $(function () {
       $('.bottom-header__dropdown-btn').removeClass('_active');
     }
   }); //fixed header
+  // window.addEventListener('scroll', onScroll);
+  // window.addEventListener('touchmove', onScroll);
 
-  window.addEventListener('scroll', onScroll);
-  window.addEventListener('touchmove', onScroll);
+  window.onscroll = function () {
+    onScroll();
+  };
 
   function onScroll() {
     let header = document.querySelector('.header');
