@@ -1624,15 +1624,24 @@ textarea {
 }
 
 .scroll-header {
-  opacity: 0;
-  visibility: hidden;
-  position: relative;
+  display: none;
+  position: fixed;
   left: 0;
   right: 0;
   background-color: #fff;
   padding: 14px 0;
   z-index: 999;
   border-bottom: 1px solid #E0E0E0;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.scroll-header.visible {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  position: fixed;
 }
 
 .scroll-header__inner {
@@ -1653,12 +1662,12 @@ textarea {
 }
 
 .scroll-header .logo {
-  width: 99px;
+  width: 110px;
 }
 
 .scroll-header .logo img {
   padding: 0;
-  height: 18px;
+  height: 22px;
 }
 
 .scroll-header__phone {
@@ -3537,6 +3546,12 @@ button.mfp-close {
   fill: var(--accent);
 }
 
+@media (min-width: 360px) {
+  .scroll-header.visible {
+    display: none;
+  }
+}
+
 @media (max-width: 1300px) {
   .about__items {
     margin: 0 0 0 40px;
@@ -4382,14 +4397,6 @@ button.mfp-close {
 @media (max-width: 400px) {
   .bottom-header__dropdown-list {
     width: 290px;
-  }
-}
-
-@media (max-width: 360px) {
-  .scroll-header {
-    position: fixed;
-    visibility: visible;
-    opacity: 1;
   }
 }
 
