@@ -2157,9 +2157,10 @@ $(function () {
       $('.bottom-header__dropdown-list').slideUp(300);
       $('.bottom-header__dropdown-btn').removeClass('_active');
     }
-  }); //fixed header
-  // window.addEventListener('scroll', onScroll);
-  // window.addEventListener('touchmove', onScroll);
+  }); // fixed header
+
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('touchmove', onScroll);
 
   window.onscroll = function () {
     onScroll();

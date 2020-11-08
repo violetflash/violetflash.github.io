@@ -1637,13 +1637,6 @@ textarea {
   transition: all 0.3s ease 0s;
 }
 
-.scroll-header.visible {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-  position: fixed;
-}
-
 .scroll-header__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3546,12 +3539,6 @@ button.mfp-close {
   fill: var(--accent);
 }
 
-@media (min-width: 360px) {
-  .scroll-header.visible {
-    display: none;
-  }
-}
-
 @media (max-width: 1300px) {
   .about__items {
     margin: 0 0 0 40px;
@@ -4397,6 +4384,15 @@ button.mfp-close {
 @media (max-width: 400px) {
   .bottom-header__dropdown-list {
     width: 290px;
+  }
+}
+
+@media (max-width: 360px) {
+  .scroll-header.visible {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
   }
 }
 
