@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c53302e6-97ec-4751-817c-337862d6ef61" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/css/libs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/libs.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/libs.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/gilroy-bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/gilroy-bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/gilroy-medium.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/gilroy-medium.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/gilroy-mediumitalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/gilroy-mediumitalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/gilroy-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/gilroy-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/gilroy-semibold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/gilroy-semibold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/articles/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/articles/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/articles/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/articles/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/feedback/avatar-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/feedback/avatar-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/feedback/avatar-03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/hero/hero-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/about/about-autokey.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/about/about-doc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/about/about-key.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/about/about-payment.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/about/about-warranty.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/about/about-wrench.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/about/arrow-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/blog-angle-right-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/blog-angle-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/brands/01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/brands/02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/brands/03.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/brands/04.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/brands/05.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/brands/06.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/brands/07.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/burger-active.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/burger.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/eye-pass-active.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/eye-pass.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/eye.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/favorites.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/filter-angle-down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/filter-auto.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/filter-btn-hover.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/filter-btn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/filter-check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/filter-clear-hover.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/filter-clear-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/filter-clear.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/filter-magnifier.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/filter-moto.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/header-cart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/header-catalog-4dots.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/header-location.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/header-nav-dots-active.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/header-nav-dots.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/header-phone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/header-user.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/hero-clock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/hero-key.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/hero-lock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/logo-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/map/map-bus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/map/map-car.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/map/map-m.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/payment/master.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/payment/mir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/payment/visa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/slider-angle-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/socials/Instagram.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/socials/facebook.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/socials/viber.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/socials/vk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/socials/youtube.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/tabs-angle-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/icons/to-cart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/products/autokey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/products/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/slider-image1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/slider-image2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/slider-image3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/slider-image4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/stack/sprite.stack.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/svgSprite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/svgSprite/benefits-document.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/svgSprite/benefits-house.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/svgSprite/benefits-like.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/svgSprite/benefits-shield.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/svgSprite/map-location.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/svgSprite/map-phone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/svgSprite/map-time.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/libs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/video/hero-video-bg.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/video/hero-video-bg.webm" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kCd0keSX3jFHa6GRrNoZ6fcXv7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c53302e6-97ec-4751-817c-337862d6ef61" name="Default Changelist" comment="" />
+      <created>1605208286528</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605208286528</updated>
+      <workItem from="1605208287594" duration="412000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
