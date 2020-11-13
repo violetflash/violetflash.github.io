@@ -414,12 +414,14 @@ let dropdownBody = dropdownBtn.querySelector('.menu__item-dropdown'); //ONCLICK
 
 dropdownBtn.addEventListener('mouseenter', function (e) {
   // e.preventDefault()
-  this.classList.add('js-active');
-  dropdownBody.classList.add('js-visible');
+  this.classList.add('js-active'); // dropdownBody.classList.add('js-visible');
+
+  _slideDown(dropdownBody);
 });
 dropdownBtn.addEventListener('mouseleave', function (e) {
-  this.classList.remove('js-active');
-  dropdownBody.classList.remove('js-visible');
+  this.classList.remove('js-active'); // dropdownBody.classList.remove('js-visible');
+
+  _slideUp(dropdownBody);
 });
 document.addEventListener("DOMContentLoaded", function () {
   //The first argument are the elements to which the plugin shall be initialized
