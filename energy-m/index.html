@@ -52,17 +52,17 @@
           </svg>
         </button>
       </form>
-      <a class="top-panel__phone modal-btn" href="#call"></a>
+      <a class="top-panel__phone modal-btn" data-hystmodal="#call"></a>
       <div class="top-panel__contacts contacts">
         <div class="contacts__item">
           <a class="contacts__phone" href="tel:83852332211">8 (3852) 33-22-11</a>
           <p class="contacts__text">zakaz@kotel-kvr.su</p>
-          <a class="contacts__modal" href="#email-us">Написать на email</a>
+          <a class="contacts__modal" href="#" data-hystmodal="#message-us">Написать на email</a>
         </div>
         <div class="contacts__item">
           <a class="contacts__phone" href="tel:88007001579">8-800-700-15-79</a>
           <p class="contacts__text">Бесплатно по России</p>
-          <a class="contacts__request" href="#call-request">Обратный звонок</a>
+          <a class="contacts__request" href="" data-hystmodal="#call-request">Обратный звонок</a>
         </div>
       </div>
       <div class="top-panel__menu">
@@ -96,7 +96,7 @@
             <div class="mobile-menu__wrapper">
               <div class="mobile-menu__top">
                 <a class="mobile-menu__address" href="#"></a>
-                <a class="mobile-menu__phone modal-btn" href="#call"></a>
+                <a class="mobile-menu__phone modal-btn" href="#" data-hystmodal="#myModal"></a>
                 <a class="cart" href="">
                   <span class="cart__count">9</span>
                   <svg class="cart__icon" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1018,7 +1018,7 @@
             <a class="breadcrumbs__link" href="">категория</a>
           </li>
           <li class="breadcrumbs__item">
-            <span class="breadcrumbs__page">Товар</span>
+            <span class="breadcrumbs__this-page">Товар</span>
           </li>
         </ul>
       </div>
@@ -1030,7 +1030,105 @@
     </main>
   </div>
   
-  
+  <div class="hystmodal" id="call-request" aria-hidden="true">
+  <div class="hystmodal__wrap">
+    <div class="hystmodal__window" role="dialog" aria-modal="true">
+      <button data-hystclose class="hystmodal__close">Закрыть</button>
+      <!-- Ваш HTML код модального окна -->
+      <div class="modal">
+        <a class="modal__logo" href="">
+          <img src="images/icons/logo.svg" alt="Энергия-М">
+        </a>
+        <h1 class="modal__title">Заказать обратный звонок</h1>
+
+        <form class="modal__request request">
+          <label class="request__label">
+            <input class="request__input request__input--tel" type="tel" name="request-call" placeholder="Номер телефона">
+          </label>
+          <div class="request__options">
+            <label class="checkbox">
+              <input class="checkbox__input" type="radio" name="time" checked>
+              <span class="checkbox__text">сейчас</span>
+            </label>
+            <label class="checkbox">
+              <input class="checkbox__input js-time" type="radio" name="time">
+              <span class="checkbox__text">точное время</span>
+            </label>
+            <label class="request__time">
+              <textarea class="request__textarea" name="Время звонка" placeholder="Информация по времени звонка"></textarea>
+            </label>
+          </div>
+          <button class="request__btn" type="submit">Заказать
+            <svg class="request__btn-arrow" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 5.5L28 5.5M28 5.5L23.3714 1M28 5.5L23.3714 10" stroke="white" stroke-width="2"/>
+            </svg>
+          </button>
+          <p class="request__policy">Нажимая кнопку "Заказать", я соглашаюсь с
+            <a class="request__policy-link" href="">правилами</a>
+            использования персональных данных.</p>
+        </form>
+        <p class="modal__text">Или позвоните нам по одному из номеров:</p>
+        <div class="modal__contacts contacts">
+          <div class="contacts__item">
+            <a class="contacts__phone" href="tel:83852332211">8 (3852) 33-22-11</a>
+          </div>
+          <div class="contacts__item">
+            <a class="contacts__phone" href="tel:88007001579">8-800-700-15-79</a>
+            <p class="contacts__text">Бесплатно по России</p>
+          </div>
+        </div>
+        <a class="modal__link" href="" data-hystmodal="#message-us"><span>Отправить нам сообщение</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hystmodal" id="message-us" aria-hidden="true">
+  <div class="hystmodal__wrap">
+    <div class="hystmodal__window" role="dialog" aria-modal="true">
+      <button data-hystclose class="hystmodal__close">Закрыть</button>
+      <!-- Ваш HTML код модального окна -->
+      <div class="modal">
+        <a class="modal__logo" href="">
+          <img src="images/icons/logo.svg" alt="Энергия-М">
+        </a>
+        <h1 class="modal__title">Отправить нам сообщение</h1>
+
+        <form class="modal__request request">
+          <label class="request__label">
+            <input class="request__input" type="text" name="Имя" placeholder="Ваше имя">
+          </label>
+          <label class="request__label">
+            <input class="request__input" type="email" name="Email" placeholder="Ваш Email">
+          </label>
+          <label class="request__message">
+            <textarea class="request__textarea" name="Текст сообщения" placeholder="Ваше сообщение для нас"></textarea>
+          </label>
+          <button class="request__btn" type="submit">Отправить
+            <svg class="request__btn-arrow" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 5.5L28 5.5M28 5.5L23.3714 1M28 5.5L23.3714 10" stroke="white" stroke-width="2"/>
+            </svg>
+          </button>
+          <p class="request__policy">Нажимая кнопку "Отправить", я соглашаюсь с
+            <a class="request__policy-link" href="">правилами</a>
+            использования персональных данных.</p>
+        </form>
+        <p class="modal__text">Или позвоните нам по одному из номеров:</p>
+        <div class="modal__contacts contacts">
+          <div class="contacts__item">
+            <a class="contacts__phone" href="tel:83852332211">8 (3852) 33-22-11</a>
+          </div>
+          <div class="contacts__item">
+            <a class="contacts__phone" href="tel:88007001579">8-800-700-15-79</a>
+            <p class="contacts__text">Бесплатно по России</p>
+          </div>
+        </div>
+        <a class="modal__link" href="" data-hystmodal="#call-request"><span>Заказать звонок</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
   <script src="https://yastatic.net/share2/share.js" async></script>
   <script src="js/libs.min.js"></script>
   <script src="js/app.min.js"></script>
