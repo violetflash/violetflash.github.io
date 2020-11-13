@@ -2055,53 +2055,50 @@ body {
   transition: all 0.3s ease 0s;
 }
 
-#call-request .hystmodal__window,
-#message-us .hystmodal__window {
+.hystmodal__window {
   padding: 30px 20px 40px;
-  max-width: 360px;
+  max-width: 450px;
   width: 100%;
 }
 
-#call-request .modal,
-#message-us .modal {
+.modal {
   position: relative;
 }
 
-#call-request .modal__logo,
-#message-us .modal__logo {
+.modal__logo {
   display: block;
   margin: 0 0 20px;
 }
 
-#call-request .modal__title,
-#message-us .modal__title {
+.modal__title {
   margin: 0 0 20px;
   font-weight: 700;
   font-size: 24px;
   text-align: center;
 }
 
-#call-request .modal__text,
-#message-us .modal__text {
+.modal__text {
   display: block;
   margin: 0 0 15px;
 }
 
-#call-request .modal__link,
-#message-us .modal__link {
+.modal__link {
   display: block;
+  margin: 0 0 20px;
   text-align: center;
   color: #f23d18;
   font-size: 12px;
 }
 
-#call-request .modal__link span,
-#message-us .modal__link span {
+.modal__link:last-child {
+  margin: 0;
+}
+
+.modal__link span {
   border-bottom: 1px dashed;
 }
 
-#call-request .modal .contacts,
-#message-us .modal .contacts {
+.modal .contacts {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -2112,42 +2109,36 @@ body {
   margin: 0 0 30px;
 }
 
-#call-request .modal .contacts__item,
-#message-us .modal .contacts__item {
+.modal .contacts__item {
   margin: 0 0 20px;
   padding: 0;
 }
 
-#call-request .modal .contacts__item::before,
-#message-us .modal .contacts__item::before {
+.modal .contacts__item::before {
   display: none;
 }
 
-#call-request .request,
-#message-us .request {
+.modal .request {
   margin: 0 0 30px;
 }
 
-#call-request .request__label,
-#message-us .request__label {
+.modal .request__label {
   display: block;
   margin: 0 auto 10px;
   max-width: 257px;
 }
 
-#call-request .request__text,
-#message-us .request__text {
+.modal .request__text {
   margin: 0 0 20px;
 }
 
-#call-request .request__input,
-#message-us .request__input {
+.modal .request__input {
   display: block;
   margin: 0 auto;
+  padding: 5px 12px;
 }
 
-#call-request .request__btn,
-#message-us .request__btn {
+.modal .request__btn {
   position: relative;
   display: block;
   margin: 20px auto 0;
@@ -2160,111 +2151,129 @@ body {
   bottom: 0;
 }
 
-#call-request .request__btn:hover,
-#message-us .request__btn:hover {
+.modal .request__btn:hover {
   background-color: #f23d18;
   color: #fff;
 }
 
-#call-request .request__btn:hover .request__btn-arrow,
-#message-us .request__btn:hover .request__btn-arrow {
+.modal .request__btn:hover .request__btn-arrow {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-#call-request .request__btn:hover .request__btn-arrow path,
-#message-us .request__btn:hover .request__btn-arrow path {
+.modal .request__btn:hover .request__btn-arrow path {
   stroke: #fff;
 }
 
-#call-request .request__btn-arrow,
-#message-us .request__btn-arrow {
+.modal .request__btn-arrow {
   margin: 0 0 0 15px;
 }
 
-#call-request .request__btn-arrow path,
-#message-us .request__btn-arrow path {
+.modal .request__btn-arrow path {
   stroke: #f23d18;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
-#call-request .request__policy,
-#message-us .request__policy {
+.modal .request__policy {
   font-size: 12px;
   margin: 10px 0 0;
   font-style: italic;
   font-weight: 400;
 }
 
-#call-request .request__policy-link,
-#message-us .request__policy-link {
+.modal .request__policy-link {
   color: rgba(242, 61, 24, 0.7);
 }
 
-#call-request .request__options,
-#message-us .request__options {
-  max-width: 100%;
-  width: 100%;
-  height: 130px;
+.modal .request__policy-link:hover {
+  text-decoration: underline;
 }
 
-#call-request .request__input,
-#message-us .request__input {
+.modal .request__options {
+  max-width: 100%;
+  width: 100%;
+}
+
+.modal .request__input {
   border: none;
   border-bottom: 1px solid rgba(37, 37, 37, 0.3);
+  font-weight: 400;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
-#call-request .request__textarea,
-#message-us .request__textarea {
+.modal .request__textarea {
   width: 100%;
-  resize: none;
-  padding: 10px;
+  resize: vertical;
+  padding: 10px 10px 5px;
   min-height: 40px;
+  max-height: 200px;
   outline: transparent;
-  border: 1px solid rgba(37, 37, 37, 0.3);
+  border: none;
+  border-bottom: 1px solid rgba(37, 37, 37, 0.3);
 }
 
-#call-request .request__textarea::-webkit-input-placeholder,
-#message-us .request__textarea::-webkit-input-placeholder {
+.modal .request__textarea::-webkit-input-placeholder {
   font-weight: 600;
   color: rgba(37, 37, 37, 0.5);
 }
 
-#call-request .request__textarea::-moz-placeholder,
-#message-us .request__textarea::-moz-placeholder {
+.modal .request__textarea::-moz-placeholder {
   font-weight: 600;
   color: rgba(37, 37, 37, 0.5);
 }
 
-#call-request .request__textarea:-ms-input-placeholder,
-#message-us .request__textarea:-ms-input-placeholder {
+.modal .request__textarea:-ms-input-placeholder {
   font-weight: 600;
   color: rgba(37, 37, 37, 0.5);
 }
 
-#call-request .request__textarea::-ms-input-placeholder,
-#message-us .request__textarea::-ms-input-placeholder {
+.modal .request__textarea::-ms-input-placeholder {
   font-weight: 600;
   color: rgba(37, 37, 37, 0.5);
 }
 
-#call-request .request__textarea::placeholder,
-#message-us .request__textarea::placeholder {
+.modal .request__textarea::placeholder {
   font-weight: 600;
   color: rgba(37, 37, 37, 0.5);
 }
 
-#call-request .request__time,
-#message-us .request__time {
-  display: none;
+.modal .request__time {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
   max-width: 100%;
   width: 100%;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.modal .request__time.js-visible {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+#message-us .request__label {
+  max-width: 100%;
+}
+
+#message-us .request__input {
+  margin: 0;
+  width: 100%;
+}
+
+#call .contacts {
+  margin: 40px 0;
+}
+
+#call .contacts__item {
+  margin: 0 auto 20px;
 }
 
 .control {

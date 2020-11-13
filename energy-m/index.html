@@ -96,7 +96,7 @@
             <div class="mobile-menu__wrapper">
               <div class="mobile-menu__top">
                 <a class="mobile-menu__address" href="#"></a>
-                <a class="mobile-menu__phone modal-btn" href="#" data-hystmodal="#myModal"></a>
+                <a class="mobile-menu__phone" href="#" data-hystmodal="#call"></a>
                 <a class="cart" href="">
                   <span class="cart__count">9</span>
                   <svg class="cart__icon" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1030,7 +1030,7 @@
     </main>
   </div>
   
-  <div class="hystmodal" id="call-request" aria-hidden="true">
+  <div class="hystmodal scroll" id="call-request" aria-hidden="true">
   <div class="hystmodal__wrap">
     <div class="hystmodal__window" role="dialog" aria-modal="true">
       <button data-hystclose class="hystmodal__close">Закрыть</button>
@@ -1043,7 +1043,7 @@
 
         <form class="modal__request request">
           <label class="request__label">
-            <input class="request__input request__input--tel" type="tel" name="request-call" placeholder="Номер телефона">
+            <input class="request__input request__input--tel" type="tel" name="call request" placeholder="Ваш номер телефона" autocomplete="off" required>
           </label>
           <div class="request__options">
             <label class="checkbox">
@@ -1055,7 +1055,7 @@
               <span class="checkbox__text">точное время</span>
             </label>
             <label class="request__time">
-              <textarea class="request__textarea" name="Время звонка" placeholder="Информация по времени звонка"></textarea>
+              <textarea class="request__textarea" name="Время звонка" placeholder="Информация о времени звонка"></textarea>
             </label>
           </div>
           <button class="request__btn" type="submit">Заказать
@@ -1096,13 +1096,13 @@
 
         <form class="modal__request request">
           <label class="request__label">
-            <input class="request__input" type="text" name="Имя" placeholder="Ваше имя">
+            <input class="request__input" type="text" name="Имя" placeholder="Ваше имя" autocomplete="off" required>
           </label>
           <label class="request__label">
-            <input class="request__input" type="email" name="Email" placeholder="Ваш Email">
+            <input class="request__input" type="email" name="Email" placeholder="Ваш Email" autocomplete="off" required>
           </label>
           <label class="request__message">
-            <textarea class="request__textarea" name="Текст сообщения" placeholder="Ваше сообщение для нас"></textarea>
+            <textarea class="request__textarea" name="Текст сообщения" placeholder="Ваше сообщение" required></textarea>
           </label>
           <button class="request__btn" type="submit">Отправить
             <svg class="request__btn-arrow" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1129,6 +1129,31 @@
   </div>
 </div>
 
+<div class="hystmodal" id="call" aria-hidden="true">
+  <div class="hystmodal__wrap">
+    <div class="hystmodal__window" role="dialog" aria-modal="true">
+      <button data-hystclose class="hystmodal__close">Закрыть</button>
+      <!-- Ваш HTML код модального окна -->
+      <div class="modal">
+        <a class="modal__logo" href="">
+          <img src="images/icons/logo.svg" alt="Энергия-М">
+        </a>
+
+        <div class="modal__contacts contacts">
+          <div class="contacts__item">
+            <a class="contacts__phone" href="tel:83852332211">8 (3852) 33-22-11</a>
+          </div>
+          <div class="contacts__item">
+            <a class="contacts__phone" href="tel:88007001579">8-800-700-15-79</a>
+            <p class="contacts__text">Бесплатно по России</p>
+          </div>
+        </div>
+        <a class="modal__link" href="" data-hystmodal="#call-request"><span>Заказать звонок</span></a>
+        <a class="modal__link" href="" data-hystmodal="#message-us"><span>Отправить нам сообщение</span></a>
+      </div>
+    </div>
+  </div>
+</div>
   <script src="https://yastatic.net/share2/share.js" async></script>
   <script src="js/libs.min.js"></script>
   <script src="js/app.min.js"></script>

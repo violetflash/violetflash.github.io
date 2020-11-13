@@ -539,8 +539,14 @@ for (let anchor of anchors) {
       block: 'start'
     });
   });
-}
+} /////////
+////INPUT MASK
+////////
 
+
+let selector = document.querySelectorAll('input[type="tel"]');
+let im = new Inputmask("+7 (999) 999-99-99");
+im.mask(selector);
 let buttons_openSearch = document.querySelectorAll('.top-panel__search-btn');
 let forms_SearchForm = document.querySelectorAll('.top-panel__form');
 let search_input = document.getElementById('mobile-search');
@@ -650,9 +656,9 @@ let checkbox_time = document.querySelectorAll('.request__options .checkbox__inpu
 for (let i = 0; i < checkbox_time.length; i++) {
   checkbox_time[i].addEventListener('click', function (e) {
     if (timeCall.checked) {
-      timeCall_msg.style.display = "block";
+      timeCall_msg.classList.add('js-visible');
     } else {
-      timeCall_msg.style.display = "none";
+      timeCall_msg.classList.remove('js-visible');
     }
   });
 }
