@@ -34,6 +34,45 @@ if (sliders) {
 function sliders_bild_callback(params) {} // Project Sliders ====================================
 
 
+if (document.querySelector('.aside-product__slider')) {
+  var product_galleryThumbs = new Swiper('.slider-product__thumbs-body', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    observer: true,
+    observeParents: true,
+    centeredSlides: true,
+    speed: 800,
+    loop: true,
+    breakpoints: {
+      400: {
+        slidesPerView: 4
+      },
+      600: {
+        slidesPerView: 5,
+        spaceBetween: 10
+      },
+      900: {
+        slidesPerView: 3 // centeredSlides: false,
+
+      }
+    }
+  });
+  var product_galleryTop = new Swiper('.slider-product__body', {
+    slidesPerView: 1,
+    thumbs: {
+      swiper: product_galleryThumbs
+    },
+    observer: true,
+    observeParents: true,
+    speed: 800,
+    loop: true,
+    navigation: {
+      nextEl: '.slider-product__thumbs .slider-nav__next',
+      prevEl: '.slider-product__thumbs .slider-nav__prev'
+    }
+  });
+}
+
 !function (e) {
   var t = {};
 
@@ -329,7 +368,41 @@ let _slideToggle = (target, duration = 500) => {
     }
   }
 }; //=====================================================================
-// TABS
+
+
+var slideOpen = false; //var heightChecked = false;
+
+var initHeight = 120;
+var intval = null;
+
+function slideToggle() {
+  window.clearInterval(intval);
+  var mdiv = document.getElementById('mdiv');
+  /*
+  if(!heightChecked) {
+      initHeight = mdiv.offsetHeight;
+      heightChecked = true;
+  }
+  */
+
+  if (slideOpen) {
+    var h = initHeight;
+    slideOpen = false;
+    intval = setInterval(function () {
+      h--;
+      mdiv.style.height = h + 'px';
+      if (h <= 0) window.clearInterval(intval);
+    }, 1);
+  } else {
+    var h = 0;
+    slideOpen = true;
+    intval = setInterval(function () {
+      h++;
+      mdiv.style.height = h + 'px';
+      if (h >= initHeight) window.clearInterval(intval);
+    }, 1);
+  }
+} // TABS
 
 
 let tabs = document.querySelectorAll('._tabs');
@@ -370,7 +443,31 @@ for (let i = 0; i < tabs.length; i++) {
 //         change([btns, items], i)
 //     })
 // }
-// Dynamic Adapt v.1
+//amount or quantity
+
+
+let amountButtons = document.querySelectorAll('.amount__button');
+
+if (amountButtons.length > 0) {
+  for (let i = 0; i < amountButtons.length; i++) {
+    const amountButton = amountButtons[i];
+    amountButton.addEventListener('click', function (e) {
+      let value = parseInt(amountButton.closest('.amount').querySelector('input').value);
+
+      if (amountButton.classList.contains('amount__button--plus')) {
+        value++;
+      } else {
+        value = value - 1;
+
+        if (value < 1) {
+          value = 1;
+        }
+      }
+
+      amountButton.closest('.amount').querySelector('input').value = value;
+    });
+  }
+} // Dynamic Adapt v.1
 // HTML data-da="where(uniq class name),position(digi),when(breakpoint)"
 // e.x. data-da="item,2,992"
 // Andrikanych Yevhen 2020
@@ -547,6 +644,11 @@ for (let anchor of anchors) {
 let selector = document.querySelectorAll('input[type="tel"]');
 let im = new Inputmask("+7 (999) 999-99-99");
 im.mask(selector);
+document.addEventListener("DOMContentLoaded", function () {
+  //The first argument are the elements to which the plugin shall be initialized
+  //The second argument has to be at least a empty object or a object with your desired options
+  OverlayScrollbars(document.querySelectorAll(".scroll"), {});
+});
 let buttons_openSearch = document.querySelectorAll('.top-panel__search-btn');
 let forms_SearchForm = document.querySelectorAll('.top-panel__form');
 let search_input = document.getElementById('mobile-search');
@@ -660,8 +762,66 @@ for (let i = 0; i < checkbox_time.length; i++) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  //The first argument are the elements to which the plugin shall be initialized
-  //The second argument has to be at least a empty object or a object with your desired options
-  OverlayScrollbars(document.querySelectorAll(".scroll"), {});
+let product_filter = document.querySelector('.filter__toggle');
+let product_filterBody = document.querySelector('.filter__body');
+let product_filterBtn = document.querySelector('.filter__btn');
+let product_filterResult = document.querySelector('.filter__content');
+product_filter.addEventListener('click', function (e) {
+  // this.classList.toggle('js-opened');
+  // product_filterBody.classList.toggle('js-visible');
+  _slideToggle(product_filterBody);
+});
+let btnText = document.querySelector('.filter__show');
+product_filterBtn.addEventListener('click', function (e) {
+  product_filterResult.classList.toggle('js-opened');
+
+  if (btnText.innerHTML === 'Показать') {
+    btnText.innerHTML = 'Скрыть';
+  } else {
+    btnText.innerHTML = 'Показать';
+  }
+});
+const choices_element = document.querySelectorAll('.filter__select');
+
+for (let i = 0; i < choices_element.length; i++) {
+  const choices = new Choices(choices_element[i], {
+    searchEnabled: false,
+    position: "bottom",
+    itemSelectText: '',
+    shouldSort: false
+  });
+}
+
+const choices_elementsDisabled = document.querySelectorAll('.select-disabled');
+
+for (let i = 0; i < choices_elementsDisabled.length; i++) {
+  const choices_elementDisabled = new Choices(choices_elementsDisabled[i], {}).disable();
+} //accordion
+
+
+var acc = document.querySelectorAll(".accordion");
+var u;
+
+for (u = 0; u < acc.length; u++) {
+  acc[u].addEventListener("click", function () {
+    this.classList.toggle("js-active");
+    var panel = this.nextElementSibling;
+
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+} //collapse all of accordions in .product__info-tab
+
+
+let collapse_btn = document.querySelector('.info-tab__control');
+let accordions = document.querySelectorAll('.info-tab__body .accordion-content');
+let info_acc = document.querySelectorAll('.info-tab__body .accordion');
+collapse_btn.addEventListener('click', function (e) {
+  for (let i = 0; i < accordions.length; i++) {
+    accordions[i].style.maxHeight = null;
+    info_acc[i].classList.remove('js-active');
+  }
 });
