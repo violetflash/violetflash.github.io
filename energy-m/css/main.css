@@ -2590,7 +2590,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  height: 50px;
+  width: 100%;
 }
 
 #buy .request__input {
@@ -4132,6 +4132,12 @@ body {
   }
 }
 
+@media (max-width: 580px) {
+  .product-modal {
+    display: block;
+  }
+}
+
 @media (max-width: 550px) {
   .top-panel__logo {
     -ms-flex-preferred-size: 160px;
@@ -4155,6 +4161,13 @@ body {
 
   .request__input {
     margin: 0 57px 0 0;
+  }
+
+  #buy .request__label {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 }
 
