@@ -1360,7 +1360,7 @@
         </ul>
         <a class="aside-product__choose-power"
            href="#power-filter"><span>Не подходит мощность? Подберите необходимую мощность котла в несколько кликов!</span></a>
-        <form class="aside-product__filter filter" action="" id="power-filter">
+        <form class="aside-product__filter filter" action="" onkeydown="return event.key != 'Enter';" id="power-filter" onsubmit="alert('form submitted')">
           <button class="filter__toggle" type="button">
             <span>Уточните ваш запрос, если товар не подходит</span>
             <svg class="filter__toggle-icon" width="16" height="10" viewBox="0 0 16 10" fill="none"
@@ -1377,6 +1377,9 @@
                     <option>Дерево</option>
                     <option>Каменный уголь</option>
                     <option>Бурый уголь</option>
+                    <option>Газ</option>
+                    <option>Мазут</option>
+                    <option>Дизель</option>
                   </select>
                 </label>
                 <label class="filter__label">
@@ -1388,6 +1391,18 @@
                   </select>
                 </label>
                 <label class="filter__label">
+                  Вид топки
+                  <select class="filter__select">
+                    <option>Механическая ТШПМ</option>
+                    <option>Ручная колосниковая</option>
+                    <option>Ручная РПК</option>
+                    <option>Механическая ТЛПХ</option>
+                    <option>Полумеханическая ЗП РПК</option>
+                    <option>Механическая ТЛЗМ</option>
+                    <option>ОУР</option>
+                  </select>
+                </label>
+                <label class="filter__label">
                   Тяга
                   <select class="filter__select">
                     <option>Уравновешенная</option>
@@ -1396,6 +1411,19 @@
                   </select>
                 </label>
               </div>
+              <p class="filter__caption">Цена, руб.:</p>
+              <div class="filter__range range">
+                <div class="range__slider"></div>
+                <div class="range__values slider-values">
+                  <label class="slider-values__label">от
+                    <input class="slider-values__input slider-values__from">
+                  </label>
+                  <label class="slider-values__label">до
+                    <input class="slider-values__input slider-values__to">
+                  </label>
+                </div>
+              </div>
+
               <p class="filter__caption">Дополнительная комплектация:</p>
               <div class="filter__checkboxes">
                 <label class="checkbox">
