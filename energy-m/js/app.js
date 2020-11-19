@@ -1,78 +1,3 @@
-//BuildSlider - строит HTML конструкцию для свайпера
-let sliders = document.querySelectorAll('.swiper');
-
-if (sliders) {
-  for (let index = 0; index < sliders.length; index++) {
-    let slider = sliders[index];
-
-    if (!slider.classList.contains('swiper-container')) {
-      let slider_items = slider.children;
-
-      if (slider_items) {
-        for (let index = 0; index < slider_items.length; index++) {
-          let el = slider_items[index];
-          el.classList.add('swiper-slide');
-        }
-      }
-
-      let slider_content = slider.innerHTML;
-      let slider_wrapper = document.createElement('div');
-      slider_wrapper.classList.add('swiper-wrapper');
-      slider_wrapper.innerHTML = slider_content;
-      slider.innerHTML = '';
-      slider.appendChild(slider_wrapper);
-      slider.classList.add('swiper-container');
-    }
-
-    if (slider.classList.contains('_gallery')) {//slider.data('lightGallery').destroy(true);
-    }
-  }
-
-  sliders_bild_callback();
-}
-
-function sliders_bild_callback(params) {} // Project Sliders ====================================
-
-
-if (document.querySelector('.aside-product__slider')) {
-  var product_galleryThumbs = new Swiper('.slider-product__thumbs-body', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    observer: true,
-    observeParents: true,
-    centeredSlides: true,
-    speed: 800,
-    loop: true,
-    breakpoints: {
-      400: {
-        slidesPerView: 4
-      },
-      600: {
-        slidesPerView: 5,
-        spaceBetween: 10
-      },
-      900: {
-        slidesPerView: 3 // centeredSlides: false,
-
-      }
-    }
-  });
-  var product_galleryTop = new Swiper('.slider-product__body', {
-    slidesPerView: 1,
-    thumbs: {
-      swiper: product_galleryThumbs
-    },
-    observer: true,
-    observeParents: true,
-    speed: 800,
-    loop: true,
-    navigation: {
-      nextEl: '.slider-product__thumbs .slider-nav__next',
-      prevEl: '.slider-product__thumbs .slider-nav__prev'
-    }
-  });
-}
-
 !function (e) {
   var t = {};
 
@@ -288,7 +213,134 @@ if (document.querySelector('.aside-product__slider')) {
 
     return null;
   });
-}, function (e, t, n) {}]); //IBG
+}, function (e, t, n) {}]);
+/**
+ shave - Shave is a javascript plugin that truncates multi-line text within a html element based on set max height
+ @version v2.5.7
+ @link https://github.com/dollarshaveclub/shave#readme
+ @author Jeff Wainwright <yowainwright@gmail.com> (jeffry.in)
+ @license MIT
+ **/
+
+!function (e, t) {
+  "object" == typeof exports && "undefined" != typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define(t) : (e = e || self).shave = t();
+}(this, function () {
+  "use strict";
+
+  return function (e, t) {
+    var n = 2 < arguments.length && void 0 !== arguments[2] ? arguments[2] : {};
+    if (void 0 === t || isNaN(t)) throw Error("maxHeight is required");
+    var i = "string" == typeof e ? document.querySelectorAll(e) : e;
+
+    if (i) {
+      var o = n.character || "…",
+          a = n.classname || "js-shave",
+          s = "boolean" != typeof n.spaces || n.spaces,
+          r = '<span class="js-shave-char">'.concat(o, "</span>");
+      "length" in i || (i = [i]);
+
+      for (var c = 0; c < i.length; c += 1) {
+        var l = i[c],
+            h = l.style,
+            d = l.querySelector(".".concat(a)),
+            f = void 0 === l.textContent ? "innerText" : "textContent";
+        d && (l.removeChild(l.querySelector(".js-shave-char")), l[f] = l[f]);
+        var v = l[f],
+            g = s ? v.split(" ") : v;
+
+        if (!(g.length < 2)) {
+          var u = h.height;
+          h.height = "auto";
+          var p = h.maxHeight;
+          if (h.maxHeight = "none", l.offsetHeight <= t) h.height = u, h.maxHeight = p;else {
+            for (var m = g.length - 1, x = 0, y = void 0; x < m;) y = x + m + 1 >> 1, l[f] = s ? g.slice(0, y).join(" ") : g.slice(0, y), l.insertAdjacentHTML("beforeend", r), l.offsetHeight > t ? m = y - 1 : x = y;
+
+            l[f] = s ? g.slice(0, m).join(" ") : g.slice(0, m), l.insertAdjacentHTML("beforeend", r);
+            var j = s ? " ".concat(g.slice(m).join(" ")) : g.slice(m),
+                H = document.createTextNode(j),
+                b = document.createElement("span");
+            b.classList.add(a), b.style.display = "none", b.appendChild(H), l.insertAdjacentElement("beforeend", b), h.height = u, h.maxHeight = p;
+          }
+        }
+      }
+    }
+  };
+}); //BuildSlider - строит HTML конструкцию для свайпера
+
+let sliders = document.querySelectorAll('.swiper');
+
+if (sliders) {
+  for (let index = 0; index < sliders.length; index++) {
+    let slider = sliders[index];
+
+    if (!slider.classList.contains('swiper-container')) {
+      let slider_items = slider.children;
+
+      if (slider_items) {
+        for (let index = 0; index < slider_items.length; index++) {
+          let el = slider_items[index];
+          el.classList.add('swiper-slide');
+        }
+      }
+
+      let slider_content = slider.innerHTML;
+      let slider_wrapper = document.createElement('div');
+      slider_wrapper.classList.add('swiper-wrapper');
+      slider_wrapper.innerHTML = slider_content;
+      slider.innerHTML = '';
+      slider.appendChild(slider_wrapper);
+      slider.classList.add('swiper-container');
+    }
+
+    if (slider.classList.contains('_gallery')) {//slider.data('lightGallery').destroy(true);
+    }
+  }
+
+  sliders_bild_callback();
+}
+
+function sliders_bild_callback(params) {} // Project Sliders ====================================
+
+
+if (document.querySelector('.aside-product__slider')) {
+  var product_galleryThumbs = new Swiper('.slider-product__thumbs-body', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    observer: true,
+    observeParents: true,
+    centeredSlides: true,
+    speed: 800,
+    loop: true,
+    breakpoints: {
+      400: {
+        slidesPerView: 4
+      },
+      600: {
+        slidesPerView: 5,
+        spaceBetween: 10
+      },
+      900: {
+        slidesPerView: 3 // centeredSlides: false,
+
+      }
+    }
+  });
+  var product_galleryTop = new Swiper('.slider-product__body', {
+    slidesPerView: 1,
+    thumbs: {
+      swiper: product_galleryThumbs
+    },
+    observer: true,
+    observeParents: true,
+    speed: 800,
+    loop: true,
+    navigation: {
+      nextEl: '.slider-product__thumbs .slider-nav__next',
+      prevEl: '.slider-product__thumbs .slider-nav__prev'
+    }
+  });
+} //IBG
+
 
 function ibg() {
   let ibg = document.querySelectorAll(".ibg");
@@ -401,71 +453,6 @@ function slideToggle() {
       mdiv.style.height = h + 'px';
       if (h >= initHeight) window.clearInterval(intval);
     }, 1);
-  }
-} // TABS
-
-
-let tabs = document.querySelectorAll('._tabs');
-
-for (let i = 0; i < tabs.length; i++) {
-  let tab = tabs[i];
-  let tabs_items = tab.querySelectorAll('._tabs-item');
-  let tabs_content = tab.querySelectorAll('._tabs-content');
-
-  for (let i = 0; i < tabs_items.length; i++) {
-    let tabs_item = tabs_items[i];
-    tabs_item.addEventListener('click', function (e) {
-      for (let i = 0; i < tabs_items.length; i++) {
-        let tabs_item = tabs_items[i];
-        tabs_item.classList.remove('_active');
-        tabs_content[i].classList.remove('_active');
-      }
-
-      tabs_item.classList.add('_active');
-      tabs_content[i].classList.add('_active');
-      e.preventDefault();
-    });
-  }
-} //Also working tabs code
-// let tabs = document.querySelectorAll('._tabs')
-// let btns = tabs.querySelectorAll('._tabs-item')
-// let items = tabs.querySelectorAll('._tabs-content')
-//
-// function change(arr, i) {
-//     arr.forEach( item => {
-//         item.forEach( i => {i.classList.remove('_active')})
-//         item[i].classList.add('_active')
-//     })
-// }
-//
-// for(let i = 0; i < btns.length; i++) {
-//     btns[i].addEventListener('click', () => {
-//         change([btns, items], i)
-//     })
-// }
-//amount or quantity
-
-
-let amountButtons = document.querySelectorAll('.amount__button');
-
-if (amountButtons.length > 0) {
-  for (let i = 0; i < amountButtons.length; i++) {
-    const amountButton = amountButtons[i];
-    amountButton.addEventListener('click', function (e) {
-      let value = parseInt(amountButton.closest('.amount').querySelector('input').value);
-
-      if (amountButton.classList.contains('amount__button--plus')) {
-        value++;
-      } else {
-        value = value - 1;
-
-        if (value < 1) {
-          value = 1;
-        }
-      }
-
-      amountButton.closest('.amount').querySelector('input').value = value;
-    });
   }
 } // Dynamic Adapt v.1
 // HTML data-da="where(uniq class name),position(digi),when(breakpoint)"
@@ -621,7 +608,73 @@ if (amountButtons.length > 0) {
 
   function customAdapt() {//const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   }
-})(); //Smooth scroll to the anchor
+})(); // TABS
+
+
+let tabs = document.querySelectorAll('._tabs');
+
+for (let i = 0; i < tabs.length; i++) {
+  let tab = tabs[i];
+  let tabs_items = tab.querySelectorAll('._tabs-item');
+  let tabs_content = tab.querySelectorAll('._tabs-content');
+
+  for (let i = 0; i < tabs_items.length; i++) {
+    let tabs_item = tabs_items[i];
+    tabs_item.addEventListener('click', function (e) {
+      for (let i = 0; i < tabs_items.length; i++) {
+        let tabs_item = tabs_items[i];
+        tabs_item.classList.remove('js-active');
+        tabs_content[i].classList.remove('js-active');
+      }
+
+      tabs_item.classList.add('js-active');
+      tabs_content[i].classList.add('js-active');
+      shave('.additional__description', 68);
+      e.preventDefault();
+    });
+  }
+} // Also working tabs code
+// let tabs_all = document.querySelectorAll('._tabs')
+// let btns_all = tabs_all.querySelectorAll('._tabs-item')
+// let items_all = tabs_all.querySelectorAll('._tabs-content')
+//
+// function change(arr, i) {
+//     arr.forEach( item => {
+//         item.forEach( i => {i.classList.remove('js-active')})
+//         item[i].classList.add('js-active')
+//     })
+// }
+//
+// for(let i = 0; i < btns_all.length; i++) {
+//     btns_all[i].addEventListener('click', () => {
+//         change([btns_all, items_all], i)
+//     })
+// }
+//amount or quantity
+
+
+let amountButtons = document.querySelectorAll('.amount__button');
+
+if (amountButtons.length > 0) {
+  for (let i = 0; i < amountButtons.length; i++) {
+    const amountButton = amountButtons[i];
+    amountButton.addEventListener('click', function (e) {
+      let value = parseInt(amountButton.closest('.amount').querySelector('input').value);
+
+      if (amountButton.classList.contains('amount__button--plus')) {
+        value++;
+      } else {
+        value = value - 1;
+
+        if (value < 1) {
+          value = 1;
+        }
+      }
+
+      amountButton.closest('.amount').querySelector('input').value = value;
+    });
+  }
+} //Smooth scroll to the anchor
 
 
 const anchors = document.querySelectorAll('a[href*="#"]'); //Каждому якорю присваиваем обработчик события
@@ -824,7 +877,40 @@ collapse_btn.addEventListener('click', function (e) {
     accordions[i].style.maxHeight = null;
     info_acc[i].classList.remove('js-active');
   }
-}); //Range Slider (NOUISLIDER)
+}); // let smallImgDiv = document.getElementById('thumbs-div');
+//
+// smallImgDiv.addEventListener('click', (e) => {
+//     let targetElement = e.target || e.srcElement;
+//     let tagName = targetElement.tagName;
+//
+//     if(tagName === "IMG") {
+//         document.getElementById('big-image').src = targetElement.getAttribute("src");
+//         document.getElementById("main-image-link").href = 'link' + targetElement.getAttribute("data-link") + '.html';
+//     }
+// });
+//Клик на миниатюре меняет src аттрибут у главной картинки
+
+let img_thumbs = document.querySelectorAll('.photo__img');
+let img_thumbsDiv = document.querySelectorAll('.photo__thumb');
+let target_img = document.getElementById('big-image');
+let modal_img = document.getElementById('modal-photo-img');
+
+for (let i = 0; i < img_thumbs.length; i++) {
+  let img_thumb = img_thumbs[i];
+  img_thumb.addEventListener('click', function (e) {
+    //remove all active states
+    for (let i = 0; i < img_thumbsDiv.length; i++) {
+      img_thumbsDiv[i].classList.remove('js-active');
+    } //add active to this
+
+
+    img_thumbsDiv[i].classList.add('js-active');
+    target_img.src = img_thumb.getAttribute("src"); //Меняем аттрибут у модального окна для просмотра
+
+    modal_img.src = img_thumb.getAttribute("src");
+  });
+} //Range Slider (NOUISLIDER)
+
 
 if (document.querySelector('.range')) {
   const priceSlider = document.querySelector('.range__slider');
@@ -917,4 +1003,4 @@ if (document.querySelector('.range')) {
       }
     });
   });
-}
+} // END OF NOUISLIDER SCRIPT
