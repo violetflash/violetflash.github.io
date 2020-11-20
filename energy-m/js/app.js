@@ -265,6 +265,9 @@
       }
     }
   };
+});
+var scroll = new SmoothScroll('a[href*="#"]', {
+  topOnEmptyHash: false
 }); //BuildSlider - строит HTML конструкцию для свайпера
 
 let sliders = document.querySelectorAll('.swiper');
@@ -674,22 +677,24 @@ if (amountButtons.length > 0) {
       amountButton.closest('.amount').querySelector('input').value = value;
     });
   }
-} //Smooth scroll to the anchor
-
-
-const anchors = document.querySelectorAll('a[href*="#"]'); //Каждому якорю присваиваем обработчик события
-
-for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    //убираем стандартное поведение по клику
-    e.preventDefault();
-    const blockID = anchor.getAttribute('href').substr(1);
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-  });
-} /////////
+} // //Smooth scroll to the anchor
+// const anchors = document.querySelectorAll('a[href*="#"]')
+//
+// //Каждому якорю присваиваем обработчик события
+// for (let anchor of anchors) {
+//     anchor.addEventListener('click', function (e) {
+//         //убираем стандартное поведение по клику
+//         e.preventDefault()
+//
+//         const blockID = anchor.getAttribute('href').substr(1)
+//
+//         document.getElementById(blockID).scrollIntoView({
+//             behavior: 'smooth',
+//             block: 'start'
+//         })
+//     })
+// }
+/////////
 ////INPUT MASK
 ////////
 
@@ -877,18 +882,7 @@ collapse_btn.addEventListener('click', function (e) {
     accordions[i].style.maxHeight = null;
     info_acc[i].classList.remove('js-active');
   }
-}); // let smallImgDiv = document.getElementById('thumbs-div');
-//
-// smallImgDiv.addEventListener('click', (e) => {
-//     let targetElement = e.target || e.srcElement;
-//     let tagName = targetElement.tagName;
-//
-//     if(tagName === "IMG") {
-//         document.getElementById('big-image').src = targetElement.getAttribute("src");
-//         document.getElementById("main-image-link").href = 'link' + targetElement.getAttribute("data-link") + '.html';
-//     }
-// });
-//Клик на миниатюре меняет src аттрибут у главной картинки
+}); //Клик на миниатюре меняет src аттрибут у главной картинки
 
 let img_thumbs = document.querySelectorAll('.photo__img');
 let img_thumbsDiv = document.querySelectorAll('.photo__thumb');
@@ -909,8 +903,10 @@ for (let i = 0; i < img_thumbs.length; i++) {
 
     modal_img.src = img_thumb.getAttribute("src");
   });
-} //Range Slider (NOUISLIDER)
+} //LightGallery plugin initialize
 
+
+lightGallery(document.getElementById('lightgallery')); //Range Slider (NOUISLIDER)
 
 if (document.querySelector('.range')) {
   const priceSlider = document.querySelector('.range__slider');
