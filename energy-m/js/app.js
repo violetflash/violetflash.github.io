@@ -708,6 +708,42 @@ if (document.querySelector('.aside-product__slider')) {
       prevEl: '.slider-product__thumbs .slider-nav__prev'
     }
   });
+}
+
+if (document.querySelector('.similar__slider')) {
+  var similarCards = new Swiper('.similar__slider', {
+    slidesPerView: 6,
+    spaceBetween: 20,
+    observer: true,
+    observeParents: true,
+    speed: 800,
+    // autoplay: true,
+    loop: true,
+    navigation: {
+      nextEl: '.similar .slider-nav__next',
+      prevEl: '.similar .slider-nav__prev'
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1
+      },
+      400: {
+        slidesPerView: 2
+      },
+      600: {
+        slidesPerView: 3
+      },
+      768: {
+        slidesPerView: 4
+      },
+      992: {
+        slidesPerView: 5
+      },
+      1200: {
+        slidesPerView: 6
+      }
+    }
+  });
 } //IBG
 
 
@@ -1089,8 +1125,10 @@ for (let i = 0; i < buttons_openSearch.length; i++) {
 let burger = document.querySelector('.burger');
 let burger_box = document.querySelector('.top-panel__menu');
 let mobile_menu = document.querySelector('.mobile-menu__content');
+let body = document.querySelector('body');
 burger.addEventListener('click', function (e) {
-  this.classList.toggle('js-to-cross');
+  this.classList.toggle('js-to-angle');
+  body.classList.toggle('js-overflow');
   burger_box.classList.toggle('js-active');
   mobile_menu.classList.toggle('js-opened');
 });
@@ -1326,6 +1364,79 @@ for (k = 0; k < acc_all.length; k++) {
 //         info_acc[i].classList.remove('js-active');
 //     }
 // });
+// const getOffset = (element, horizontal = false) => {
+//     if(!element) return 0;
+//     return getOffset(element.offsetParent, horizontal) + (horizontal ? element.offsetLeft : element.offsetTop);
+// }
+//
+// let bar_block = document.querySelector('.bar');
+//
+// window.addEventListener('scroll', onScroll);
+// window.addEventListener('touchmove', onScroll);
+// window.onscroll = function () {
+//     onScroll()
+// };
+//
+// function onScroll() {
+//     console.log(getOffset(bar_block))
+//     console.log(window.pageYOffset)
+// }
+// fixed bar
+
+
+window.addEventListener('scroll', onScroll);
+window.addEventListener('touchmove', onScroll);
+
+window.onscroll = function () {
+  onScroll();
+};
+
+function onScroll() {
+  let bar_line = document.getElementById('bar-line');
+  let bar_block = document.querySelector('.bar'); // let bar_block_bottom = bar_block.offsetTop + bar_block.offsetHeight;
+
+  let bar_block_bottom = bar_block.offsetTop + bar_block.offsetHeight - window.innerHeight;
+  console.log(window.innerHeight);
+  console.log(bar_block_bottom);
+  console.log(window.pageYOffset);
+
+  if (window.pageYOffset > 500 && window.pageYOffset < bar_block_bottom) {
+    bar_line.classList.add('js-fixed');
+  } else {
+    bar_line.classList.remove('js-fixed');
+  } // if (window.pageYOffset >= bar_block.offsetTop) {
+  //     console.log('HERE')
+  // }
+  // while (window.pageYOffset !== bar_line_bottom) {
+  // if ((window.pageYOffset > 500) && (window.pageYOffset !== bar_block.offsetTop)) {
+  //     bar_line.classList.add('js-fixed');
+  // } else {
+  //     bar_line.classList.remove('js-fixed');
+  //     // break
+  // }
+  // }
+
+} // else if ( window.pageYOffset < 500 ) {
+//     bar.classList.remove('js-fixed');
+// } else if (window.pageYOffset >= barBottom) {
+//     bar.classList.remove('js-fixed');
+// }
+//
+// // fixed header
+// window.addEventListener('scroll', onScroll);
+// window.addEventListener('touchmove', onScroll);
+// window.onscroll = function () {onScroll()};
+//
+// function onScroll() {
+//     let header = document.querySelector('.header');
+//     let headerBottom = header.offsetTop + header.offsetHeight;
+//     let headerScroll = document.querySelector('.scroll-header');
+//     if (window.pageYOffset >= headerBottom)  {
+//         headerScroll.classList.add('visible');
+//     } else if ( window.pageYOffset < headerBottom) {
+//         headerScroll.classList.remove('visible');
+//     }
+// }
 //Range Slider (NOUISLIDER)
 
 
