@@ -3212,7 +3212,8 @@ body.js-overflow {
   overflow: hidden;
 }
 
-.purchase-btn .cart:hover::before {
+.purchase-btn .cart:hover::before,
+.purchase-btn .cart:hover::after {
   -webkit-animation: product 1.5s ease;
   animation: product 1.5s ease;
 }
@@ -3241,6 +3242,20 @@ body.js-overflow {
   -ms-transform: translateX(-50px);
   transform: translateX(-50px);
   z-index: 2;
+}
+
+.purchase-btn .cart::after {
+  content: "";
+  position: absolute;
+  left: 32px;
+  top: 12px;
+  width: 2px;
+  height: 17px;
+  background-color: rgba(37, 37, 37, 0.5);
+  -webkit-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  transform: translateX(-50px);
+  z-index: 3;
 }
 
 .purchase-btn .cart__icon {
@@ -4185,6 +4200,14 @@ body.js-overflow {
   height: 20px;
   background-color: #f4f4f4;
   cursor: help;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.details__tooltip:hover {
+  background-color: #f23d18;
+  color: #fff;
 }
 
 .details__tooltip:hover .details__tooltip-wrapper {
@@ -4223,6 +4246,7 @@ body.js-overflow {
   font-weight: 600;
   font-size: 12px;
   overflow-y: auto;
+  color: #252525;
   background-color: #fff;
   z-index: 20;
 }
