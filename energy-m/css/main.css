@@ -5673,6 +5673,16 @@ body.js-overflow {
     max-width: 100%;
   }
 
+  .purchase-btn .cart:hover::before,
+  .purchase-btn .cart:hover::after {
+    display: none;
+  }
+
+  .purchase-btn .cart:hover .cart__icon {
+    -webkit-animation: none;
+    animation: none;
+  }
+
   .request-btn {
     max-width: 100%;
     -webkit-box-pack: center;
