@@ -3712,10 +3712,6 @@ body.js-overflow {
   transition: all 0.3s;
 }
 
-.filter__body {
-  display: none;
-}
-
 .filter__body.js-visible {
   display: block;
 }
@@ -3951,7 +3947,7 @@ body.js-overflow {
 
 .info-tab__body {
   padding: 20px 20px 0 60px;
-  height: 350px;
+  height: 443px;
   border: 2px solid #f4f4f4;
 }
 
@@ -5157,6 +5153,137 @@ body.js-overflow {
   margin: 0 0 32px;
 }
 
+.callback {
+  background-color: #f4f4f4;
+  margin: 0 0 100px;
+}
+
+.callback__inner {
+  position: relative;
+  padding: 30px;
+  background-image: url("../images/icons/callback-bg.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.callback__inner::before,
+.callback__inner::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 150px;
+  height: 110%;
+  -webkit-transform: rotate(180deg) translateX(70%);
+  -ms-transform: rotate(180deg) translateX(70%);
+  transform: rotate(180deg) translateX(70%);
+  background-image: url("../images/icons/callback-chevron.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.callback__inner::after {
+  left: unset;
+  right: 0;
+  -webkit-transform: rotate(180deg) translateX(-20%);
+  -ms-transform: rotate(180deg) translateX(-20%);
+  transform: rotate(180deg) translateX(-20%);
+}
+
+.callback .call-request {
+  z-index: 2;
+}
+
+.callback .call-request__body {
+  z-index: 2;
+}
+
+.call-request {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.call-request__text {
+  display: block;
+  margin: 0 50px 0 0;
+  font-weight: 700;
+  max-width: 660px;
+}
+
+.call-request__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.call-request__input {
+  height: 60px;
+  line-height: 60;
+  padding: 0 20px;
+  outline: transparent;
+  border: none;
+}
+
+.call-request__input::-webkit-input-placeholder {
+  font-weight: 600;
+  color: rgba(37, 37, 37, 0.5);
+}
+
+.call-request__input::-moz-placeholder {
+  font-weight: 600;
+  color: rgba(37, 37, 37, 0.5);
+}
+
+.call-request__input:-ms-input-placeholder {
+  font-weight: 600;
+  color: rgba(37, 37, 37, 0.5);
+}
+
+.call-request__input::-ms-input-placeholder {
+  font-weight: 600;
+  color: rgba(37, 37, 37, 0.5);
+}
+
+.call-request__input::placeholder {
+  font-weight: 600;
+  color: rgba(37, 37, 37, 0.5);
+}
+
+.call-request__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 60px;
+  width: 57px;
+  background: -o-linear-gradient(315deg, #E62817 0%, #F26118 100%);
+  background: linear-gradient(135deg, #E62817 0%, #F26118 100%);
+}
+
+.call-request__btn:hover .call-request__arrow {
+  -webkit-transform: scale(1.1) translateX(4px);
+  -ms-transform: scale(1.1) translateX(4px);
+  transform: scale(1.1) translateX(4px);
+}
+
+.call-request__arrow {
+  width: 30px;
+  height: 10px;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
 @media (min-width: 769px) {
   .top-panel__form {
     display: none;
@@ -5432,6 +5559,20 @@ body.js-overflow {
   .photo__mobile {
     display: block;
   }
+
+  .callback__inner::before,
+  .callback__inner::after {
+    display: none;
+  }
+
+  .callback .call-request {
+    display: block;
+  }
+
+  .callback .call-request__text {
+    margin: 0 0 20px;
+    max-width: 100%;
+  }
 }
 
 @media all and (max-width: 767px) {
@@ -5530,6 +5671,10 @@ body.js-overflow {
     padding: 20px;
   }
 
+  .articles {
+    padding: 0 0 50px;
+  }
+
   .articles__inner {
     margin: 0;
   }
@@ -5538,6 +5683,14 @@ body.js-overflow {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
     margin: 0 0 20px;
+  }
+
+  .callback {
+    margin: 0 0 50px;
+  }
+
+  .callback__inner {
+    padding: 15px;
   }
 }
 
@@ -5818,6 +5971,7 @@ body.js-overflow {
   .selection__inner {
     margin: 0 -15px;
     padding: 15px;
+    background-size: 574px 530px;
   }
 
   .selection__item {
@@ -5826,6 +5980,14 @@ body.js-overflow {
 
   .articles__inner {
     margin: 0 -15px;
+  }
+
+  .callback__inner {
+    margin: 0 -15px;
+  }
+
+  .callback .call-request__text {
+    font-size: 16px;
   }
 }
 
