@@ -912,6 +912,42 @@ if (document.querySelector('.documents__slider')) {
       }
     }
   });
+}
+
+if (document.querySelector('.about__slider')) {
+  var aboutSlider = new Swiper('.about__slider', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    observer: true,
+    observeParents: true,
+    speed: 800,
+    // autoplay: true,
+    loop: true,
+    navigation: {
+      nextEl: '.about .slider-nav__next',
+      prevEl: '.about .slider-nav__prev'
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1
+      },
+      400: {
+        slidesPerView: 1
+      },
+      650: {
+        slidesPerView: 1
+      },
+      768: {
+        slidesPerView: 2
+      },
+      992: {
+        slidesPerView: 2
+      },
+      1250: {
+        slidesPerView: 3
+      }
+    }
+  });
 } //IBG
 
 
