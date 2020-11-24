@@ -1662,8 +1662,10 @@ for (let i = 0; i < articles.length; i++) {
       articles[k].classList.remove('js-hover');
     }
   });
-} //Range Slider (NOUISLIDER)
+} //LightGallery plugin initialize
 
+
+lightGallery(document.getElementById('insta-gallery')); //Range Slider (NOUISLIDER)
 
 if (document.querySelector('.range')) {
   const priceSlider = document.querySelector('.range__slider');
