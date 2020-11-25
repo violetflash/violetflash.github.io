@@ -4897,7 +4897,7 @@ body.js-overflow {
   left: 0;
   right: 0;
   z-index: 999;
-  background-color: #f4f4f4;
+  background-color: #4a4848;
 }
 
 .bar-line .request-btn {
@@ -6032,6 +6032,31 @@ body.js-overflow {
   color: #f23d18;
 }
 
+.footer {
+  background-color: #f4f4f4;
+  padding: 0 0 300px;
+}
+
+.footer__inner {
+  position: relative;
+}
+
+.footer__to-top {
+  position: absolute;
+  left: 20px;
+  top: -20px;
+}
+
+.footer .top-panel__menu::before {
+  display: none;
+}
+
+.footer .top-panel__cart {
+  -webkit-box-ordinal-group: 6;
+  -ms-flex-order: 5;
+  order: 5;
+}
+
 @media (min-width: 769px) {
   .top-panel__form {
     display: none;
@@ -6635,6 +6660,18 @@ body.js-overflow {
   .map {
     padding: 0 0 50px;
   }
+
+  .footer__inner {
+    margin: 0 -15px;
+  }
+
+  .footer .top-panel {
+    padding: 0 0 0 15px;
+  }
+
+  .footer .top-panel__cart {
+    margin: 0;
+  }
 }
 
 @media (max-width: 750px) {
@@ -6900,6 +6937,12 @@ body.js-overflow {
 
   .instagram__gallery a {
     max-width: calc((100% - 40px) / 2);
+  }
+
+  .footer .top-panel__cart {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
