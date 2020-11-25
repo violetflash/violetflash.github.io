@@ -966,6 +966,45 @@ if (document.querySelector('.about__slider')) {
       }
     }
   });
+}
+
+if (document.querySelector('.viewed__slider')) {
+  var viewedCards = new Swiper('.viewed__slider', {
+    slidesPerView: 6,
+    spaceBetween: 20,
+    observer: true,
+    observeParents: true,
+    speed: 800,
+    autoplay: true,
+    loop: true,
+    navigation: {
+      nextEl: '.similar .slider-nav__next',
+      prevEl: '.similar .slider-nav__prev'
+    },
+    breakpoints: {
+      280: {
+        slidesPerView: 1
+      },
+      330: {
+        slidesPerView: 2
+      },
+      400: {
+        slidesPerView: 2
+      },
+      600: {
+        slidesPerView: 3
+      },
+      768: {
+        slidesPerView: 4
+      },
+      992: {
+        slidesPerView: 5
+      },
+      1200: {
+        slidesPerView: 6
+      }
+    }
+  });
 } //IBG
 
 
@@ -1683,7 +1722,48 @@ for (let i = 0; i < articles.length; i++) {
 } //LightGallery plugin initialize
 
 
-lightGallery(document.getElementById('insta-gallery')); //Range Slider (NOUISLIDER)
+lightGallery(document.getElementById('insta-gallery')); // const list = ['JavaScript', 'Kotlin', 'Rust', 'PHP', 'Ruby', 'Java', 'MarkDown', 'Python', 'C++', 'Fortran', 'Assembler'];
+// const result = document.getElementById('results');
+// const renderResult = list => renderList(list, result);
+// const renderFilteredResult = val => renderResult(list.filter(i => (~i.indexOf(e.target.value))));
+// const searchHandler = ({target: {value}}) => renderFilteredResult(value);
+//
+// renderResult(list);
+//
+// function renderList(list = [], el = document.body) {
+//     el.innerHTML = '';
+//     list.forEach(i => {
+//         let new_el = document.createElement('li');
+//         new_el.innerHTML = i;
+//         el.appendChild(new_el);
+//     })
+// }
+//
+// document.getElementById('search').addEventListener('input', searchHandler);
+
+var map_acc = document.querySelectorAll(".map__btn");
+var j;
+
+for (j = 0; j < map_acc.length; j++) {
+  map_acc[j].addEventListener("click", function () {
+    this.classList.toggle("js-active");
+    var panel = this.nextElementSibling;
+
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+} //CITY FILTER by list.js plugin -- DOESNT WORKING WITH NESTED LISTS
+// var options = {
+//     valueNames: [ 'map__link' ],
+//     nestedSearch: true
+// };
+//
+// var userList = new List('city-search', options);
+//Range Slider (NOUISLIDER)
+
 
 if (document.querySelector('.range')) {
   const priceSlider = document.querySelector('.range__slider');
