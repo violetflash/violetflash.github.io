@@ -6039,12 +6039,66 @@ body.js-overflow {
 
 .footer__inner {
   position: relative;
+  padding: 20px 0 0;
 }
 
 .footer__to-top {
   position: absolute;
+  width: 53px;
+  height: 17px;
   left: 20px;
-  top: -20px;
+  top: -22px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer__to-top svg {
+  width: 53px;
+  height: 17px;
+}
+
+.footer__to-top svg path {
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.footer__to-top:hover {
+  -webkit-transform: rotate(90deg) translateX(-5px);
+  -ms-transform: rotate(90deg) translateX(-5px);
+  transform: rotate(90deg) translateX(-5px);
+}
+
+.footer__to-top:hover svg path {
+  stroke: #f23d18;
+}
+
+.footer__to-top::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 16px;
+  width: 50px;
+  height: 50px;
+  background-color: #f4f4f4;
+  z-index: -1;
+}
+
+.footer__to-top::after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 16px;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 16px solid #fff;
+  border-bottom: 25px solid transparent;
+  z-index: -1;
 }
 
 .footer .top-panel__menu::before {
@@ -6055,6 +6109,35 @@ body.js-overflow {
   -webkit-box-ordinal-group: 6;
   -ms-flex-order: 5;
   order: 5;
+}
+
+.footer .top-panel__form {
+  width: calc(100% - 220px);
+}
+
+.footer .search-form__input {
+  padding: 10px 80px 10px 15px;
+}
+
+.footer__panel {
+  display: none;
+}
+
+.footer__address {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 45px;
+  flex: 0 0 45px;
+  height: 45px;
+  background: url("../images/icons/map-marker.svg") center no-repeat;
+}
+
+.footer__phone {
+  display: none;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 45px;
+  flex: 0 0 45px;
+  height: 45px;
+  background: url("../images/icons/smartphone.svg") center no-repeat;
 }
 
 @media (min-width: 769px) {
@@ -6944,6 +7027,10 @@ body.js-overflow {
     display: -ms-flexbox;
     display: flex;
   }
+
+  .footer .top-panel__address {
+    display: block;
+  }
 }
 
 @media (max-width: 580px) {
@@ -7192,6 +7279,30 @@ body.js-overflow {
   }
 }
 
+@media (max-width: 430px) {
+  .footer .top-panel__form {
+    width: calc(100% - 165px);
+  }
+
+  .footer .top-panel__address {
+    display: none;
+  }
+
+  .footer__panel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 430px) and (max-width: 400px) {
+  .footer__panel {
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+  }
+}
+
 @media (max-width: 420px) {
   .instagram__photo {
     max-width: calc(100% - 30px);
@@ -7225,6 +7336,14 @@ body.js-overflow {
 
   .insta-info__image {
     margin: 0 0 20px;
+  }
+
+  .footer .top-panel__form {
+    width: calc(100% - 110px);
+  }
+
+  .footer__phone {
+    display: block;
   }
 }
 
