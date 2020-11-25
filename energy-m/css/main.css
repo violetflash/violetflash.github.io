@@ -6037,7 +6037,7 @@ body.js-overflow {
   background-image: url("../images/icons/big-m.svg");
   background-position: -100px bottom;
   background-repeat: no-repeat;
-  background-size: 495px 360px;
+  background-size: 40%;
 }
 
 .footer__inner {
@@ -6179,6 +6179,13 @@ body.js-overflow {
 
 .footer__link {
   display: block;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer__link:hover {
+  color: #f23d18;
 }
 
 .footer__nav-list {
@@ -6340,6 +6347,13 @@ body.js-overflow {
 .city-search__link {
   display: block;
   font-weight: 600;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.city-search__link:hover {
+  color: #f23d18;
 }
 
 .city-search__toggle {
