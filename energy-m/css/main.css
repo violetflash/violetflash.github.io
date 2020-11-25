@@ -6139,6 +6139,10 @@ body.js-overflow {
   padding: 10px 80px 10px 15px;
 }
 
+.footer .search-form__btn {
+  height: 40px;
+}
+
 .footer__panel {
   display: none;
 }
