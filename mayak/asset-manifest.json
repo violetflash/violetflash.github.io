@@ -1,30 +1,31 @@
 {
   "files": {
-    "main.css": "./static/css/main.953ddd4f.chunk.css",
-    "main.js": "./static/js/main.db4d666d.chunk.js",
-    "main.js.map": "./static/js/main.db4d666d.chunk.js.map",
+    "main.css": "./static/css/main.52fa2696.chunk.css",
+    "main.js": "./static/js/main.1af8a732.chunk.js",
+    "main.js.map": "./static/js/main.1af8a732.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.88ef8ea9.js",
     "runtime-main.js.map": "./static/js/runtime-main.88ef8ea9.js.map",
-    "static/js/2.908f637a.chunk.js": "./static/js/2.908f637a.chunk.js",
-    "static/js/2.908f637a.chunk.js.map": "./static/js/2.908f637a.chunk.js.map",
+    "static/js/2.3757ba49.chunk.js": "./static/js/2.3757ba49.chunk.js",
+    "static/js/2.3757ba49.chunk.js.map": "./static/js/2.3757ba49.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.953ddd4f.chunk.css.map": "./static/css/main.953ddd4f.chunk.css.map",
-    "static/js/2.908f637a.chunk.js.LICENSE.txt": "./static/js/2.908f637a.chunk.js.LICENSE.txt",
+    "static/css/main.52fa2696.chunk.css.map": "./static/css/main.52fa2696.chunk.css.map",
+    "static/js/2.3757ba49.chunk.js.LICENSE.txt": "./static/js/2.3757ba49.chunk.js.LICENSE.txt",
     "static/media/bg.9df64605.svg": "./static/media/bg.9df64605.svg",
+    "static/media/Nav.module.scss": "./static/media/bricks.80e0ece2.svg",
     "static/media/bushes.4e8fe125.svg": "./static/media/bushes.4e8fe125.svg",
     "static/media/defaultUser.e0418189.svg": "./static/media/defaultUser.e0418189.svg",
     "static/media/EmailConfirmPopup.module.scss": "./static/media/email.d76f88d1.svg",
     "static/media/girl.30c5b848.svg": "./static/media/girl.30c5b848.svg",
     "static/media/Methods.module.scss": "./static/media/google.92b8040a.svg",
+    "static/media/Info.module.scss": "./static/media/mail.049c3c1a.svg",
     "static/media/moon.aa9f279a.svg": "./static/media/moon.aa9f279a.svg",
     "static/media/sun.137e9c17.svg": "./static/media/sun.137e9c17.svg",
-    "static/media/trash.bb8494aa.svg": "./static/media/trash.bb8494aa.svg",
     "static/media/tree-plain.96882dda.svg": "./static/media/tree-plain.96882dda.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.88ef8ea9.js",
-    "static/js/2.908f637a.chunk.js",
-    "static/css/main.953ddd4f.chunk.css",
-    "static/js/main.db4d666d.chunk.js"
+    "static/js/2.3757ba49.chunk.js",
+    "static/css/main.52fa2696.chunk.css",
+    "static/js/main.1af8a732.chunk.js"
   ]
 }
